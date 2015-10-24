@@ -1,0 +1,8 @@
+## Interface: 11200
+## Title: ChatSuey - Web Links
+## Author: Scott Hamper
+## Version: 1.0
+## Dependencies: ChatSuey
+## Notes: Automatically converts URLs with "://" into hyperlinks. Clicking them brings up a box to easily copy the URL into your clipboard. Enter/Escape keys can close the box.
+
+Main.lua

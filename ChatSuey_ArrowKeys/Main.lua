@@ -1,0 +1,1 @@
+ChatFrameEditBox:SetAltArrowKeyMode(false);

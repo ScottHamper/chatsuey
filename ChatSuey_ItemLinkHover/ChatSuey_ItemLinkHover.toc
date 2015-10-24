@@ -1,0 +1,8 @@
+## Interface: 11200
+## Title: ChatSuey - Item Link Hover
+## Author: Scott Hamper
+## Version: 1.0
+## Dependencies: ChatSuey
+## Notes: Hovering the mouse cursor over an item hyperlink will display the item's tooltip.
+
+Main.lua

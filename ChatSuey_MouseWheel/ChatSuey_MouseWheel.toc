@@ -1,0 +1,8 @@
+## Interface: 11200
+## Title: ChatSuey - Mouse Wheel
+## Author: Scott Hamper
+## Version: 1.0
+## Dependencies: ChatSuey
+## Notes: Enables the mouse wheel to scroll chat windows.
+
+Main.lua

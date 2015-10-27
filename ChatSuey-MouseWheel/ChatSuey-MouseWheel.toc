@@ -1,7 +1,7 @@
 ## Interface: 11200
 ## Title: ChatSuey - Mouse Wheel
 ## Author: Scott Hamper
-## X-Website: http://www.scotthamper.com/chatsuey
+## X-Website: http://www.scotthamper.com/chatsuey/
 ## Version: 1.0.0
 ## Dependencies: ChatSuey
 ## Notes: Enables the mouse wheel to scroll chat windows.

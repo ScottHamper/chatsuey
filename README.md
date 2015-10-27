@@ -1,6 +1,6 @@
 ChatSuey
 ========
-A collection of chat enhancement addons for vanilla World of Warcraft (WoW 1.12). Learn about all the features at the [project website](http://www.scotthamper.com/chatsuey).
+A collection of chat enhancement addons for vanilla World of Warcraft (WoW 1.12). Learn about all the features at the [project website](http://www.scotthamper.com/chatsuey/).
 
 Installation
 ------------

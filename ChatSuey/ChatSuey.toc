@@ -1,7 +1,7 @@
 ## Interface: 11200
 ## Title: ChatSuey
 ## Author: Scott Hamper
-## Version: 1.0
+## Version: 1.0.0
 ## Notes: Utility library for ChatSuey addons. Useless by itself.
 
 Globals.lua

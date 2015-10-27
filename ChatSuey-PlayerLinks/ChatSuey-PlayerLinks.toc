@@ -1,6 +1,7 @@
 ## Interface: 11200
 ## Title: ChatSuey - Player Links
 ## Author: Scott Hamper
+## X-Website: http://www.scotthamper.com/chatsuey
 ## Version: 1.0.0
 ## Dependencies: ChatSuey
 ## Notes: Enhanced player hyperlinks in chat. Alt-Click to invite, Ctrl-Click to target. When writing a message, Shift-Click will insert a working hyperlink.

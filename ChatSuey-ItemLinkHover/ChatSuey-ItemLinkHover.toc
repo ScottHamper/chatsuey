@@ -1,6 +1,7 @@
 ## Interface: 11200
 ## Title: ChatSuey - Item Link Hover
 ## Author: Scott Hamper
+## X-Website: http://www.scotthamper.com/chatsuey
 ## Version: 1.0.0
 ## Dependencies: ChatSuey
 ## Notes: Hovering the mouse cursor over an item hyperlink will display the item's tooltip.

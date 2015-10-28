@@ -33,6 +33,19 @@ ChatSuey.COLORS = {
     HEIRLOOM = "ffe6cc80",
     TOKEN = "ff00ccff",
     BLIZZARD = "ff00ccff",
+    
+    -- WoW Class Colors
+    DEATHKNIGHT = "ffc41f3b",
+    DRUID = "ffff7d0a",
+    HUNTER = "ffabd473",
+    MAGE = "ff69ccf0",
+    MONK = "ff00ff96",
+    PALADIN = "fff58cba",
+    PRIEST = "ffffffff",
+    ROGUE = "fffff569",
+    SHAMAN = "ff0070de",
+    WARLOCK = "ff9482c9",
+    WARRIOR = "ffc79c6e",
 
     -- Other WoW Colors
     SPELL = "ff71d5ff",
@@ -50,7 +63,7 @@ C[LS["WHITE"]] = C.WHITE;
 C[LS["PURPLE"]] = C.PURPLE;
 C[LS["MAROON"]] = C.MAROON;
 C[LS["RED"]] = C.RED;
-C[LS["FUSCHIA"]] = C.FUSCHIA;
+C[LS["FUCHSIA"]] = C.FUCHSIA;
 C[LS["GREEN"]] = C.GREEN;
 C[LS["LIME"]] = C.LIME;
 C[LS["OLIVE"]] = C.OLIVE;
@@ -70,6 +83,17 @@ C[LS["ARTIFACT"]] = C.ARTIFACT;
 C[LS["HEIRLOOM"]] = C.HEIRLOOM;
 C[LS["TOKEN"]] = C.TOKEN;
 C[LS["BLIZZARD"]] = C.BLIZZARD;
+C[LS["DEATHKNIGHT"]] = C.DEATHKNIGHT;
+C[LS["DRUID"]] = C.DRUID;
+C[LS["HUNTER"]] = C.HUNTER;
+C[LS["MAGE"]] = C.MAGE;
+C[LS["MONK"]] = C.MONK;
+C[LS["PALADIN"]] = C.PALADIN;
+C[LS["PRIEST"]] = C.PRIEST;
+C[LS["ROGUE"]] = C.ROGUE;
+C[LS["SHAMAN"]] = C.SHAMAN;
+C[LS["WARLOCK"]] = C.WARLOCK;
+C[LS["WARRIOR"]] = C.WARRIOR;
 C[LS["SPELL"]] = C.SPELL;
 C[LS["SKILL"]] = C.SKILL;
 C[LS["TALENT"]] = C.TALENT;

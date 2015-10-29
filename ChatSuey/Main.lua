@@ -5,14 +5,14 @@ local ARGB_PATTERN = "%x%x%x%x%x%x%x%x";
 
 ChatSuey.Hyperlink = function (uri, text, color)
     local link = string.format("|H%s|h[%s]|h", uri, text);
-    
+
     if color then
         color = ChatSuey.COLORS[string.upper(color)] or color;
-        
+
         if not string.find(color, ARGB_PATTERN) then
             error("Invalid color value: " .. color);
         end
-        
+
         link = string.format("|c%s%s|r", color, link);
     end
 

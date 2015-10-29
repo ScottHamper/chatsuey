@@ -11,11 +11,11 @@ local replaceFoundHyperlink = function (frame, matchTrailingSpace)
     local suffix = matchTrailingSpace and " " or "";
     local message = frame:GetText();
     local i, j, text, uri, color = string.find(message, COLORED_LINK_PATTERN .. suffix);
-    
+
     if i == nil then
         i, j, text, uri = string.find(message, BASE_LINK_PATTERN .. suffix);
     end
-    
+
     if i == nil then
         return;
     end

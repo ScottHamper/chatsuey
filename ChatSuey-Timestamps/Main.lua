@@ -10,6 +10,7 @@ local PLAYER_MESSAGE_TYPES = {
     [_G.ChatTypeInfo["OFFICER"].id] = true,
     [_G.ChatTypeInfo["YELL"].id] = true,
     [_G.ChatTypeInfo["WHISPER"].id] = true,
+    [_G.ChatTypeInfo["WHISPER_INFORM"].id] = true,
     [_G.ChatTypeInfo["RAID_LEADER"].id] = true,
     [_G.ChatTypeInfo["RAID_WARNING"].id] = true,
     [_G.ChatTypeInfo["BATTLEGROUND"].id] = true,

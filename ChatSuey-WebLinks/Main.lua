@@ -26,10 +26,9 @@ local clickedUrl = "";
 local onHyperlinkClick = function ()
     local uri = _G.arg1;
     local link = _G.arg2;
-    local button = _G.arg3;
 
     if not string.find(uri, URL_PATTERN) then
-        hooks[this].OnHyperlinkClick(this, uri, link, button);
+        hooks[this].OnHyperlinkClick();
         return;
     end
 

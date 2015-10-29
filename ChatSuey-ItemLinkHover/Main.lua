@@ -8,11 +8,9 @@ local isItemUri = function (uri)
 end;
 
 local onHyperlinkEnter = function ()
+    hooks[this].OnHyperlinkEnter();
+
     local uri = _G.arg1;
-    local link = _G.arg2;
-
-    hooks[this].OnHyperlinkEnter(this, uri, link);
-
     if not isItemUri(uri) then
         return;
     end
@@ -23,11 +21,9 @@ local onHyperlinkEnter = function ()
 end;
 
 local onHyperlinkLeave = function ()
+    hooks[this].OnHyperlinkLeave();
+
     local uri = _G.arg1;
-    local link = _G.arg2;
-
-    hooks[this].OnHyperlinkLeave(this, uri, link);
-
     if not isItemUri(uri) then
         return;
     end

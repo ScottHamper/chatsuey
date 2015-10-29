@@ -7,7 +7,7 @@ local hideButton = function (button)
     -- Scroll buttons are shown every time the active chat
     -- tab changes, among other scenarios.
     hooks:RegisterScript(button, "OnShow", function ()
-        hooks[this].OnShow(this);
+        hooks[this].OnShow();
         this:Hide();
     end);
 end;

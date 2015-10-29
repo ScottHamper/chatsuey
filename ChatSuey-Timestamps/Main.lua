@@ -56,11 +56,9 @@ local isTimeUri = function (uri)
 end;
 
 local onHyperlinkEnter = function ()
+    hooks[this].OnHyperlinkEnter();
+
     local uri = _G.arg1;
-    local link = _G.arg2;
-
-    hooks[this].OnHyperlinkEnter(this, uri, link);
-
     if not isTimeUri(uri) then
         return;
     end
@@ -72,11 +70,9 @@ local onHyperlinkEnter = function ()
 end;
 
 local onHyperlinkLeave = function ()
+    hooks[this].OnHyperlinkEnter();
+
     local uri = _G.arg1;
-    local link = _G.arg2;
-
-    hooks[this].OnHyperlinkEnter(this, uri, link);
-
     if not isTimeUri(uri) then
         return;
     end
@@ -86,15 +82,13 @@ end;
 
 local onHyperlinkClick = function ()
     local uri = _G.arg1;
-    local link = _G.arg2;
-    local button = _G.arg3;
 
     -- NoOp to prevent an "Unknown link type" error
     if isTimeUri(uri) then
         return;
     end
 
-    hooks[this].OnHyperlinkClick(this, uri, link, button);
+    hooks[this].OnHyperlinkClick();
 end;
 
 for i = 1, _G.NUM_CHAT_WINDOWS do

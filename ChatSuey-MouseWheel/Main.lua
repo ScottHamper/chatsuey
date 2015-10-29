@@ -10,11 +10,11 @@ local SCROLL_COUNT = 1;
 local FAST_SCROLL_COUNT = 5;
 
 local onMouseWheel = function()
+    hooks[this].OnMouseWheel();
+
     local direction = _G.arg1;
     local scrollOnce = direction == MOUSE_WHEEL_UP and this.ScrollUp or this.ScrollDown;
     local scrollFull = direction == MOUSE_WHEEL_UP and this.ScrollToTop or this.ScrollToBottom;
-
-    hooks[this].OnMouseWheel(this, direction);
 
     if _G.IsControlKeyDown() then
         scrollFull(this);

@@ -7,11 +7,10 @@ local DEFAULT_COLOR = ChatSuey.COLORS.WHITE;
 local onHyperlinkClick = function ()
     local uri = _G.arg1;
     local link = _G.arg2;
-    local button = _G.arg3;
 
     local scheme, player, text, color = ChatSuey.HyperlinkComponents(link);
     if scheme ~= "player" then
-        hooks[this].OnHyperlinkClick(this, uri, link, button);
+        hooks[this].OnHyperlinkClick();
         return;
     end
 
@@ -35,7 +34,7 @@ local onHyperlinkClick = function ()
         return;
     end
 
-    hooks[this].OnHyperlinkClick(this, uri, link, button);
+    hooks[this].OnHyperlinkClick();
 end;
 
 for i = 1, _G.NUM_CHAT_WINDOWS do

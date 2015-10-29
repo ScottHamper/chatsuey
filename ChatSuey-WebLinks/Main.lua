@@ -4,6 +4,7 @@ local hooks = ChatSuey.HookTable:new();
 
 local DIALOG_NAME = "ChatSuey_WebLinkDialog";
 local URL_PATTERN = "(|?%a[%w+.%-]-://[%w%-._~:/?#%[%]@!$&'()*+,;=%%]+)";
+local LINK_COLOR = ChatSuey.COLORS.TOKEN;
 
 local parseHyperlink = function (link)
     -- We don't want to replace the text of an existing chat hyperlink
@@ -12,7 +13,7 @@ local parseHyperlink = function (link)
         return link;
     end
 
-    return ChatSuey.Hyperlink(link, link, "ff00ccff");
+    return ChatSuey.Hyperlink(link, link, LINK_COLOR);
 end;
 
 local addMessage = function (self, text, red, green, blue, messageId, holdTime)

@@ -5,6 +5,8 @@ local hooks = ChatSuey.HookTable:new();
 local BASE_LINK_PATTERN = "%[([^%]]+)%]%((.+)%)";
 local COLORED_LINK_PATTERN = BASE_LINK_PATTERN .. "{(.+)}";
 
+local DEFAULT_COLOR = ChatSuey.COLORS.WHITE;
+
 local replaceFoundHyperlink = function (frame, matchTrailingSpace)
     local suffix = matchTrailingSpace and " " or "";
     local message = frame:GetText();
@@ -17,7 +19,10 @@ local replaceFoundHyperlink = function (frame, matchTrailingSpace)
     if i == nil then
         return;
     end
-    
+
+    -- In order to send hyperlinks in chat, a color must be specified
+    color = color or DEFAULT_COLOR;
+
     frame:HighlightText(i - 1, j);
     frame:Insert(ChatSuey.Hyperlink(uri, text, color) .. suffix);
 end;

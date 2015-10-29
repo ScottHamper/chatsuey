@@ -2,6 +2,8 @@ local _G = getfenv();
 local ChatSuey = _G.ChatSuey;
 local hooks = ChatSuey.HookTable:new();
 
+local DEFAULT_COLOR = ChatSuey.COLORS.WHITE;
+
 local onHyperlinkClick = function ()
     local uri = _G.arg1;
     local link = _G.arg2;
@@ -23,6 +25,7 @@ local onHyperlinkClick = function ()
         -- is required to send a link in a chat message. As a result, we
         -- construct a brand new hyperlink instead of copying the existing
         -- link's string.
+        color = color or DEFAULT_COLOR;
         _G.ChatFrameEditBox:Insert(ChatSuey.Hyperlink(uri, text, color));
         return;
     end

@@ -3,7 +3,7 @@ local ChatSuey = _G.ChatSuey;
 local hooks = ChatSuey.HookTable:new();
 
 local isItemUri = function (uri)
-    local _, _, scheme = string.find(uri, "([^:]-):");
+    local scheme, _ = ChatSuey.UriComponents(uri);
     return scheme == "item";
 end;
 

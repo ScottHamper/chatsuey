@@ -1,0 +1,8 @@
+## Interface: 11200
+## Title: ChatSuey - Timestamps
+## Author: Scott Hamper
+## Version: 1.0
+## Dependences: ChatSuey
+## Notes: Adds timestamps to player chat messages.
+
+Main.lua

@@ -71,7 +71,7 @@ local onHyperlinkEnter = function ()
 end;
 
 local onHyperlinkLeave = function ()
-    hooks[this].OnHyperlinkEnter();
+    hooks[this].OnHyperlinkLeave();
 
     local uri = _G.arg1;
     if not isTimeUri(uri) then

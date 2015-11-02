@@ -5,7 +5,8 @@ A collection of chat enhancement addons for vanilla World of Warcraft (WoW 1.12)
 Installation
 ------------
 1. Copy all the ChatSuey folders into your WoW `Interface\AddOns` directory.
-2. Enable/disable desired addons at the character select screen ("EditOnTop" and "RemoveButtons" are disabled by default).
+2. If WoW is currently running, exit completely out and restart it.
+3. Enable/disable desired addons at the character select screen ("EditOnTop" and "RemoveButtons" are disabled by default).
 
 Localizations greatly appreciated
 ---------------------------------

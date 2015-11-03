@@ -3,6 +3,9 @@
 ## Author: Scott Hamper
 ## Version: 1.0
 ## Dependences: ChatSuey
-## Notes: Adds timestamps to player chat messages.
+## Notes: Adds timestamps to chat messages. Right-click a chat tab to configure settings.
 
+UIDropDownMenu.lua
+Config.lua
+ConfigUI.lua
 Main.lua

@@ -26,16 +26,16 @@ function HookTable:RegisterScript(frame, script, handler)
     frame:SetScript(script, handler);
 end
 
-function HookTable:RegisterFunc(frame, funcName, func)
-    self[frame] = self[frame] or {};
+function HookTable:RegisterFunc(table, funcName, func)
+    self[table] = self[table] or {};
 
-    if self[frame][funcName] then
-        local err = string.format("Attempted to register multiple \"%s\" hooks for the same frame", funcName);
+    if self[table][funcName] then
+        local err = string.format("Attempted to register multiple \"%s\" hooks for the same table", funcName);
         error(err);
     end
 
-    self[frame][funcName] = frame[funcName] or noOp;
-    frame[funcName] = func;
+    self[table][funcName] = table[funcName] or noOp;
+    table[funcName] = func;
 end
 
 _G.ChatSuey.HookTable = HookTable;

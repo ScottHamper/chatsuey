@@ -30,6 +30,6 @@ ChatSuey.HyperlinkComponents = function (link)
 end;
 
 ChatSuey.UriComponents = function (uri)
-    local _, _, scheme, path = string.find(uri, "^([^:]-):(.+)$");
+    local _, _, scheme, path = string.find(uri, "^(.-):(.+)$");
     return scheme, path;
 end;

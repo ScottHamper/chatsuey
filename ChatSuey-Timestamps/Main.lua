@@ -5,8 +5,8 @@ local hooks = ChatSuey.HookTable:new();
 local UTC_FULL_FORMAT = "!%H:%M:%S UTC";
 
 local addMessage = function (self, text, red, green, blue, messageId, holdTime)
-    local config = ChatSuey.Timestamps.Config[self];
-    
+    local config = ChatSuey.DB.Config.Timestamps[self:GetName()];
+
     local localFormat = string.format("%s:%%M%s%s",
         config.use24HourClock and "%H" or "%I",
         config.includeSeconds and ":%S" or "",

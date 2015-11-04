@@ -33,3 +33,20 @@ ChatSuey.UriComponents = function (uri)
     local _, _, scheme, path = string.find(uri, "^(.-):(.+)$");
     return scheme, path;
 end;
+
+-- SavedVariables are loaded after the addon has been parsed/executed,
+-- but before the `ADDON_LOADED` event is fired. So we have to create a
+-- frame just to listen for that event, in order to init our DB.
+local eventFrame = _G.CreateFrame("FRAME");
+eventFrame:RegisterEvent("ADDON_LOADED");
+
+eventFrame:SetScript("OnEvent", function ()
+    local addon = _G.arg1;
+
+    if addon ~= "ChatSuey" then
+        return;
+    end
+
+    _G.ChatSueyDB = _G.ChatSueyDB or {};
+    ChatSuey.DB = _G.ChatSueyDB;
+end);

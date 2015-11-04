@@ -10,7 +10,7 @@ local ROOT_OPTION = {
 };
 
 local use24HourClockOption = function (chatFrame)
-    local config = ChatSuey.Timestamps.Config[chatFrame];
+    local config = ChatSuey.DB.Config.Timestamps[chatFrame:GetName()];
 
     return {
         text = LS["Use 24 hour clock"],
@@ -24,7 +24,7 @@ local use24HourClockOption = function (chatFrame)
 end;
 
 local includeSecondsOption = function (chatFrame)
-    local config = ChatSuey.Timestamps.Config[chatFrame];
+    local config = ChatSuey.DB.Config.Timestamps[chatFrame:GetName()];
 
     return {
         text = LS["Include seconds"],
@@ -36,8 +36,27 @@ local includeSecondsOption = function (chatFrame)
     };
 end;
 
+local colorHexByteToNum = function (hexByte)
+    return tonumber(hexByte, 16) / 255;
+end;
+
+local r = function (colorHex)
+    local rHex = string.sub(colorHex, 1, 2);
+    return colorHexByteToNum(rHex);
+end;
+
+local g = function (colorHex)
+    local gHex = string.sub(colorHex, 3, 4);
+    return colorHexByteToNum(gHex);
+end;
+
+local b = function (colorHex)
+    local bHex = string.sub(colorHex, 5, 6);
+    return colorHexByteToNum(bHex);
+end;
+
 local useConsistentColorOption = function (chatFrame)
-    local config = ChatSuey.Timestamps.Config[chatFrame];
+    local config = ChatSuey.DB.Config.Timestamps[chatFrame:GetName()];
     local originalColor = config.color;
 
     return {
@@ -45,9 +64,9 @@ local useConsistentColorOption = function (chatFrame)
         checked = config.useConsistentColor,
         keepShownOnClick = true,
         hasColorSwatch = true,
-        r = config:r(),
-        g = config:g(),
-        b = config:b(),
+        r = r(config.color),
+        g = g(config.color),
+        b = b(config.color),
 
         func = function ()
             config.useConsistentColor = not _G.UIDropDownMenuButton_GetChecked();

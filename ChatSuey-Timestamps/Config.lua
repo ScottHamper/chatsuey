@@ -1,6 +1,7 @@
 local _G = getfenv();
 local ChatSuey = _G.ChatSuey;
-ChatSuey.Timestamps.Config = {};
+ChatSuey.DB.Config = ChatSuey.DB.Config or {};
+ChatSuey.DB.Config.Timestamps = ChatSuey.DB.Config.Timestamps or {};
 
 -- TODO: Persist settings per account
 local defaults = {
@@ -19,26 +20,7 @@ local defaults = {
     -- Skill messages
 };
 
-local hexColorByteToNum = function (hexByte)
-    return tonumber(hexByte, 16) / 255;
-end;
-
-local r = function (self)
-    local rHex = string.sub(self.color, 1, 2);
-    return hexColorByteToNum(rHex);
-end;
-
-local g = function (self)
-    local gHex = string.sub(self.color, 3, 4);
-    return hexColorByteToNum(gHex);
-end;
-
-local b = function (self)
-    local bHex = string.sub(self.color, 5, 6);
-    return hexColorByteToNum(bHex);
-end;
-
-setmetatable(ChatSuey.Timestamps.Config, {
+setmetatable(ChatSuey.DB.Config.Timestamps, {
     __mode = "k",
     __index = function (self, key)
         local config = {
@@ -46,9 +28,6 @@ setmetatable(ChatSuey.Timestamps.Config, {
             includeSeconds = defaults.includeSeconds,
             useConsistentColor = defaults.useConsistentColor,
             color = defaults.color,
-            r = r,
-            g = g,
-            b = b,
         };
 
         self[key] = config;

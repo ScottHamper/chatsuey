@@ -8,7 +8,7 @@ local defaults = {
     use24HourClock = true,
     includeSeconds = false,
     useConsistentColor = false,
-    color = "ffffff",
+    color = ChatSuey.COLORS.WHITE,
 
     -- Possible Enhancement: Display for:
     -- All messages

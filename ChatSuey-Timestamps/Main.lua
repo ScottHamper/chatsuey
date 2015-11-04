@@ -15,7 +15,7 @@ local addMessage = function (self, text, red, green, blue, messageId, holdTime)
     local now = time();
     local utcTime = date(UTC_FULL_FORMAT, now);
     local localTime = date(localFormat, now);
-    local color = config.useConsistentColor and "ff" .. config.color or nil;
+    local color = config.useConsistentColor and config.color or nil;
 
     local timestamp = ChatSuey.Hyperlink("time:" .. utcTime, localTime, color);
 

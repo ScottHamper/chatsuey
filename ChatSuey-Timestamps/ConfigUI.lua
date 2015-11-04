@@ -40,18 +40,18 @@ local colorHexByteToNum = function (hexByte)
     return tonumber(hexByte, 16) / 255;
 end;
 
-local r = function (colorHex)
-    local rHex = string.sub(colorHex, 1, 2);
+local r = function (argbHex)
+    local rHex = string.sub(argbHex, 3, 4);
     return colorHexByteToNum(rHex);
 end;
 
-local g = function (colorHex)
-    local gHex = string.sub(colorHex, 3, 4);
+local g = function (argbHex)
+    local gHex = string.sub(argbHex, 5, 6);
     return colorHexByteToNum(gHex);
 end;
 
-local b = function (colorHex)
-    local bHex = string.sub(colorHex, 5, 6);
+local b = function (argbHex)
+    local bHex = string.sub(argbHex, 7, 8);
     return colorHexByteToNum(bHex);
 end;
 
@@ -74,7 +74,7 @@ local useConsistentColorOption = function (chatFrame)
 
         swatchFunc = function ()
             local r, g, b = ColorPickerFrame:GetColorRGB();
-            config.color = string.format("%.2x%.2x%.2x", r * 255, g * 255, b * 255);
+            config.color = string.format("ff%.2x%.2x%.2x", r * 255, g * 255, b * 255);
         end,
 
         cancelFunc = function ()

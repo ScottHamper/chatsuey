@@ -1,6 +1,5 @@
 local _G = getfenv();
 local ChatSuey = _G.ChatSuey;
-ChatSuey.Timestamps = ChatSuey.Timestamps or {};
 ChatSuey.Timestamps.Config = {};
 
 -- TODO: Persist settings per account

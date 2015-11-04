@@ -8,6 +8,7 @@
 Globals.lua
 
 i18n\Locale.lua
+i18n\LocaleTable.lua
 i18n\enUS.lua
 
 HookTable.lua

@@ -1,7 +1,6 @@
 local _G = getfenv();
 local ChatSuey = _G.ChatSuey;
 local hooks = ChatSuey.HookTable:new();
-ChatSuey.Timestamps = ChatSuey.Timestamps or {};
 
 -- All of this stuff will likely be moved out into the core ChatSuey addon
 -- once another addon that needs to have configurable chat frame settings

@@ -3,8 +3,8 @@ local ChatSuey = _G.ChatSuey;
 local enUS = ChatSuey.Locale:new();
 local LS = enUS.Strings;
 
+ChatSuey.LOCALES = ChatSuey.LOCALES or ChatSuey.LocaleTable:new(enUS);
 ChatSuey.LOCALES["enUS"] = enUS;
-ChatSuey.LOCALES.DEFAULT = enUS;
 
 -- The following is unnecessary, but it serves as a good reference for
 -- how to implement a locale, as well as being a list of all the

@@ -22,10 +22,3 @@ function Locale:new()
 end
 
 ChatSuey.Locale = Locale;
-ChatSuey.LOCALES = {};
-
-setmetatable(_G.ChatSuey.LOCALES, {
-    __index = function (self, locale)
-        return self.DEFAULT;
-    end;
-});

@@ -10,4 +10,9 @@ Installation
 
 Localizations greatly appreciated
 ---------------------------------
-ChatSuey allows using localized color names with the "Markdown Links" feature. However, I'm only fluent in English, so if you're multi-lingual, I could really use your help! Check out `ChatSuey\i18n\enUS.lua` to see the text that needs translating, and if you'd be willing to help out, please [open an issue on GitHub](https://github.com/ScottHamper/ChatSuey/issues).
+If you're multi-lingual, I could really use your help! I'm only fluent in English, but the following addons could be localized for other languages:
+
+- `ChatSuey`
+- `ChatSuey-Timestamps`
+
+If you'd be willing to help out, take a look at each addon's `i18n\enUS.lua` file to see what needs translating, and let me know by [opening an issue on GitHub](https://github.com/ScottHamper/ChatSuey/issues).

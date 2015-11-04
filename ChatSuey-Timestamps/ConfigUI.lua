@@ -1,9 +1,10 @@
 local _G = getfenv();
 local ChatSuey = _G.ChatSuey;
 local hooks = ChatSuey.HookTable:new();
+local LS = ChatSuey.Timestamps.LOCALES[_G.GetLocale()].Strings;
 
 local ROOT_OPTION = {
-    text = "Timestamps",
+    text = LS["Timestamps"],
     hasArrow = true,
     notCheckable = true,
 };
@@ -12,7 +13,7 @@ local use24HourClockOption = function (chatFrame)
     local config = ChatSuey.Timestamps.Config[chatFrame];
 
     return {
-        text = "Use 24 hour clock",
+        text = LS["Use 24 hour clock"],
         checked = config.use24HourClock,
         keepShownOnClick = true,
         func = function ()
@@ -26,7 +27,7 @@ local includeSecondsOption = function (chatFrame)
     local config = ChatSuey.Timestamps.Config[chatFrame];
 
     return {
-        text = "Include seconds",
+        text = LS["Include seconds"],
         checked = config.includeSeconds,
         keepShownOnClick = true,
         func = function ()
@@ -40,7 +41,7 @@ local useConsistentColorOption = function (chatFrame)
     local originalColor = config.color;
 
     return {
-        text = "Use consistent color",
+        text = LS["Use consistent color"],
         checked = config.useConsistentColor,
         keepShownOnClick = true,
         hasColorSwatch = true,
@@ -84,7 +85,7 @@ local initialize = function (frame, level)
         return;
     end
 
-    if _G.UIDROPDOWNMENU_MENU_LEVEL == 2 and UIDROPDOWNMENU_MENU_VALUE == "Timestamps" then
+    if _G.UIDROPDOWNMENU_MENU_LEVEL == 2 and UIDROPDOWNMENU_MENU_VALUE == LS["Timestamps"] then
         local chatFrame = _G.FCF_GetCurrentChatFrame();
 
         _G.UIDropDownMenu_AddButton(use24HourClockOption(chatFrame), 2);

@@ -2,7 +2,7 @@
 ## Title: ChatSuey - Web Links
 ## Author: Scott Hamper
 ## X-Website: http://www.scotthamper.com/chatsuey/
-## Version: 1.0.0
+## Version: 1.1.0
 ## Dependencies: ChatSuey
 ## Notes: Automatically converts URLs with "://" into hyperlinks. Clicking them brings up a box to easily copy the URL into your clipboard. Enter/Escape keys can close the box.
 

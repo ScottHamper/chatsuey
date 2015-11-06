@@ -2,7 +2,7 @@
 ## Title: ChatSuey
 ## Author: Scott Hamper
 ## X-Website: http://www.scotthamper.com/chatsuey/
-## Version: 1.0.0
+## Version: 1.1.0
 ## SavedVariables: ChatSueyDB
 ## Notes: Utility library for ChatSuey addons. Useless by itself.
 

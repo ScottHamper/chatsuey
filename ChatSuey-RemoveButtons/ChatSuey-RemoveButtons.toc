@@ -2,7 +2,7 @@
 ## Title: ChatSuey - Remove Buttons
 ## Author: Scott Hamper
 ## X-Website: http://www.scotthamper.com/chatsuey/
-## Version: 1.0.0
+## Version: 1.1.0
 ## DefaultState: disabled
 ## Notes: Removes the chat window buttons.
 

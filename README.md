@@ -8,6 +8,8 @@ Installation
 2. If WoW is currently running, exit completely out and restart it.
 3. Enable/disable desired addons at the character select screen ("EditOnTop" and "RemoveButtons" are disabled by default).
 
+NOTE: If you're upgrading from an earlier version, delete all the ChatSuey folders from your `Interface\AddOns` directory before copying the new ones over.
+
 Localizations greatly appreciated
 ---------------------------------
 If you're multi-lingual, I could really use your help! I'm only fluent in English, but the following addons could be localized for other languages:

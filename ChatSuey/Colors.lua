@@ -36,6 +36,7 @@ ChatSuey.COLORS = {
     
     -- WoW Class Colors
     DEATHKNIGHT = "ffc41f3b",
+    DEMONHUNTER = "ff4dd827",
     DRUID = "ffff7d0a",
     HUNTER = "ffabd473",
     MAGE = "ff69ccf0",
@@ -84,6 +85,7 @@ C[LS["HEIRLOOM"]] = C.HEIRLOOM;
 C[LS["TOKEN"]] = C.TOKEN;
 C[LS["BLIZZARD"]] = C.BLIZZARD;
 C[LS["DEATHKNIGHT"]] = C.DEATHKNIGHT;
+C[LS["DEMONHUNTER"]] = C.DEMONHUNTER;
 C[LS["DRUID"]] = C.DRUID;
 C[LS["HUNTER"]] = C.HUNTER;
 C[LS["MAGE"]] = C.MAGE;

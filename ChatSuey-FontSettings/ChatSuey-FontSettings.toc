@@ -1,0 +1,13 @@
+## Interface: 11200
+## Title: ChatSuey - Font Settings
+## Author: Scott Hamper
+## Version: 1.1.0
+## Dependencies: ChatSuey
+## Notes: Right-click a chat tab to adjust font settings, such as applying an outline.
+
+i18n\enUS.lua
+
+Fonts.lua
+Config.lua
+ConfigUI.lua
+Main.lua

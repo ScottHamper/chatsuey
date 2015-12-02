@@ -2,10 +2,6 @@ local _G = getfenv();
 local ChatSuey = _G.ChatSuey;
 local hooks = ChatSuey.HookTable:new();
 
--- All of this stuff will likely be moved out into the core ChatSuey addon
--- once another addon that needs to have configurable chat frame settings
--- is created.
-
 -- Blizzard's UI code doesn't let us insert buttons at specific indices in a
 -- drop down menu. So in order to make this a possibility, we cache the `info`
 -- object passed into `AddButton`. Later, we can easily work with our cache to
@@ -35,7 +31,7 @@ end;
 
 hooks:RegisterFunc(_G, "UIDropDownMenu_Initialize", uiDropDownMenu_Initialize);
 
-ChatSuey.Timestamps.UIDropDownMenu_AddButton = function (info, level, index)
+ChatSuey.UIDropDownMenu_AddButton = function (info, level, index)
     level = level or 1;
     local dropDown = _G["DropDownList" .. level];
     local buttonCount = dropDown.numButtons;
@@ -64,5 +60,33 @@ ChatSuey.Timestamps.UIDropDownMenu_AddButton = function (info, level, index)
     for i = index, buttonCount + 1 do
         local buttonInfo = buttonInfo[level][i];
         _G.UIDropDownMenu_AddButton(buttonInfo, level);
+    end
+end;
+
+ChatSuey.UIDropDownMenu_ReplaceButton = function (level, index, info)
+    local dropDown = _G["DropDownList" .. level];
+    local buttonCount = dropDown.numButtons;
+
+    buttonInfo[level][index] = info;
+
+    dropDown.numButtons = index - 1;
+
+    for i = index, buttonCount do
+        local buttonInfo = buttonInfo[level][i];
+        _G.UIDropDownMenu_AddButton(buttonInfo, level);
+    end
+end;
+
+ChatSuey.UIDropDownMenu_IndexOf = function (value, level)
+    level = level or 1;
+    local menuName = "DropDownList" .. level;
+    local menuFrame = _G[menuName];
+
+    for i = 1, menuFrame.numButtons do
+        local button = _G[menuName .. "Button" .. i];
+
+        if button.value == value then
+            return i;
+        end
     end
 end;

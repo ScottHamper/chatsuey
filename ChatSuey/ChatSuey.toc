@@ -13,5 +13,6 @@ i18n\LocaleTable.lua
 i18n\enUS.lua
 
 HookTable.lua
+UIDropDownMenu.lua
 Colors.lua
 Main.lua

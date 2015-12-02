@@ -9,7 +9,6 @@ Namespace.lua
 
 i18n\enUS.lua
 
-UIDropDownMenu.lua
 Config.lua
 ConfigUI.lua
 Main.lua

@@ -1,7 +1,7 @@
 local _G = getfenv();
 local ChatSuey = _G.ChatSuey;
 local hooks = ChatSuey.HookTable:new();
-local LS = ChatSuey.Timestamps.LOCALES[_G.GetLocale()].Strings;
+local LS = ChatSuey.LOCALES[_G.GetLocale()].Strings;
 
 local ROOT_OPTION = {
     text = LS["Timestamps"],
@@ -83,28 +83,17 @@ local useConsistentColorOption = function (chatFrame)
     };
 end;
 
-local findMenuButtonIndexByValue = function (frame, value)
-    for i = 1, frame.numButtons do
-        local button = _G[frame:GetName() .. "Button" .. i];
-
-        if button.value == value then
-            return i;
-        end
-    end
-end;
-
 local initialize = function (frame, level)
     hooks[frame].initialize(level);
 
     if _G.UIDROPDOWNMENU_MENU_LEVEL == 1 then
-        local menu = _G["DropDownList1"];
-        local displayIndex = findMenuButtonIndexByValue(menu, _G.DISPLAY);
+        local displayIndex = ChatSuey.UIDropDownMenu_IndexOf(_G.DISPLAY);
 
-        ChatSuey.Timestamps.UIDropDownMenu_AddButton(ROOT_OPTION, 1, displayIndex + 1);
+        ChatSuey.UIDropDownMenu_AddButton(ROOT_OPTION, 1, displayIndex + 1);
         return;
     end
 
-    if _G.UIDROPDOWNMENU_MENU_LEVEL == 2 and UIDROPDOWNMENU_MENU_VALUE == LS["Timestamps"] then
+    if _G.UIDROPDOWNMENU_MENU_LEVEL == 2 and _G.UIDROPDOWNMENU_MENU_VALUE == ROOT_OPTION.text then
         local chatFrame = _G.FCF_GetCurrentChatFrame();
 
         _G.UIDropDownMenu_AddButton(use24HourClockOption(chatFrame), 2);

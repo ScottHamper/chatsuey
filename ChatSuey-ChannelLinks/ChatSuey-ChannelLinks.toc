@@ -1,0 +1,9 @@
+## Interface: 11200
+## Title: ChatSuey - Channel Links
+## Author: Scott Hamper
+## Version: 1.1.0
+## Dependencies: ChatSuey
+## OptionalDeps: ChatSuey-Timestamps
+## Notes: Turns channel headers into links. Click a header to open a chat box for that channel.
+
+Main.lua

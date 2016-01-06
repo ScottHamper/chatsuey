@@ -3,7 +3,7 @@
 ## Author: Scott Hamper
 ## Version: 1.1.0
 ## Dependencies: ChatSuey
-## OptionalDeps: ChatSuey-Timestamps
+## OptionalDeps: ChatSuey-Timestamps, ChatSuey-ChannelLinks
 ## Notes: Abbreviates channel headers. E.g., [Party] becomes [P] and [1. General] becomes [1].
 
 i18n\enUS.lua

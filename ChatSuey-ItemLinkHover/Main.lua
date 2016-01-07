@@ -12,7 +12,7 @@ local onHyperlinkEnter = function ()
         return;
     end
 
-    _G.GameTooltip_SetDefaultAnchor(_G.GameTooltip, UIParent);
+    _G.GameTooltip_SetDefaultAnchor(_G.GameTooltip, _G.UIParent);
     _G.GameTooltip:SetHyperlink(uri);
     _G.GameTooltip:Show();
 end;

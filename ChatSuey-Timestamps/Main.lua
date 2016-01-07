@@ -34,7 +34,7 @@ local onHyperlinkEnter = function ()
         return;
     end
 
-    _G.GameTooltip_SetDefaultAnchor(_G.GameTooltip, UIParent);
+    _G.GameTooltip_SetDefaultAnchor(_G.GameTooltip, _G.UIParent);
     _G.GameTooltip:SetText(utcTime);
     _G.GameTooltip:Show();
 end;

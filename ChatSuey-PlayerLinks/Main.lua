@@ -2,14 +2,14 @@ local _G = getfenv();
 local ChatSuey = _G.ChatSuey;
 local hooks = ChatSuey.HookTable:new();
 
-local DEFAULT_COLOR = ChatSuey.COLORS.WHITE;
+local DEFAULT_COLOR = ChatSuey.Colors.WHITE;
 
 local onHyperlinkClick = function ()
     local uri = _G.arg1;
     local link = _G.arg2;
-
     local scheme, player, text, color = ChatSuey.HyperlinkComponents(link);
-    if scheme ~= "player" then
+
+    if scheme ~= ChatSuey.UriSchemes.PLAYER then
         hooks[this].OnHyperlinkClick();
         return;
     end

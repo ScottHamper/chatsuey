@@ -2,7 +2,7 @@ local _G = getfenv();
 local ChatTypes = _G.ChatTypeInfo;
 local ChatSuey = _G.ChatSuey;
 local hooks = ChatSuey.HookTable:new();
-local LS = ChatSuey.LOCALES[_G.GetLocale()].Strings;
+local LS = ChatSuey.Locales[_G.GetLocale()].Strings;
 
 local ABBREVIATIONS = {
     [ChatTypes.PARTY.id] = LS["P"],
@@ -40,6 +40,7 @@ end;
 
 local addMessage = function (self, text, red, green, blue, messageId, holdTime)
     local abbreviation = ABBREVIATIONS[messageId];
+
     if abbreviation then
         local header = string.format("[%s] ", abbreviation);
         text = string.gsub(text, CHANNEL_HEADER_FORMAT, header);

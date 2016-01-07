@@ -5,7 +5,7 @@ local hooks = ChatSuey.HookTable:new();
 local BASE_LINK_PATTERN = "%[([^%]]+)%]%((.+)%)";
 local COLORED_LINK_PATTERN = BASE_LINK_PATTERN .. "{(.+)}";
 
-local DEFAULT_COLOR = ChatSuey.COLORS.WHITE;
+local DEFAULT_COLOR = ChatSuey.Colors.WHITE;
 
 local replaceFoundHyperlink = function (frame, matchTrailingSpace)
     local suffix = matchTrailingSpace and " " or "";

@@ -29,7 +29,8 @@ local LINKED_CHANNELS = {
 local addMessage = function (self, text, red, green, blue, messageId, holdTime)
     if LINKED_CHANNELS[messageId] then
         text = string.gsub(text, HEADER_FORMAT, function (header)
-            return ChatSuey.Hyperlink(string.format("channel:%d", messageId), header);
+            local uri = ChatSuey.Uri(ChatSuey.UriSchemes.CHANNEL, messageId);
+            return ChatSuey.Hyperlink(uri, header);
         end);
     end
 
@@ -37,25 +38,24 @@ local addMessage = function (self, text, red, green, blue, messageId, holdTime)
 end;
 
 local onHyperlinkClick = function ()
-    local link = _G.arg2;
-    local scheme, path = ChatSuey.HyperlinkComponents(link);
+    local uri = _G.arg1;
+    local scheme, path = ChatSuey.UriComponents(uri);
 
-    if scheme == "channel" then
-        local messageId = tonumber(path);
-        local channel = LINKED_CHANNELS[messageId];
-
-        _G.ChatFrameEditBox.chatType = channel.type;
-        _G.ChatFrameEditBox.channelTarget = channel.target;
-        _G.ChatFrameEditBox:Show();
+    if scheme ~= ChatSuey.UriSchemes.CHANNEL then
+        hooks[this].OnHyperlinkClick();
         return;
     end
 
-    hooks[this].OnHyperlinkClick();
+    local messageId = tonumber(path);
+    local channel = LINKED_CHANNELS[messageId];
+
+    _G.ChatFrameEditBox.chatType = channel.type;
+    _G.ChatFrameEditBox.channelTarget = channel.target;
+    _G.ChatFrameEditBox:Show();
 end;
 
 for i = 1, _G.NUM_CHAT_WINDOWS do
     local chatFrame = _G["ChatFrame" .. i];
-
     hooks:RegisterFunc(chatFrame, "AddMessage", addMessage);
     hooks:RegisterScript(chatFrame, "OnHyperlinkClick", onHyperlinkClick);
 end

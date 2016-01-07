@@ -5,7 +5,7 @@ ChatSuey.DB.Config.Font = ChatSuey.DB.Config.Font or {};
 
 local defaults = {
     outline = nil,
-    family = "Arial Narrow",
+    path = ChatSuey.Fonts.ARIAL_NARROW.path,
 };
 
 for i = 1, _G.NUM_CHAT_WINDOWS do

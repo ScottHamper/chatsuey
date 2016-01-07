@@ -2,16 +2,13 @@ local _G = getfenv();
 local ChatSuey = _G.ChatSuey;
 local hooks = ChatSuey.HookTable:new();
 
-local isItemUri = function (uri)
-    local scheme, _ = ChatSuey.UriComponents(uri);
-    return scheme == "item";
-end;
-
 local onHyperlinkEnter = function ()
     hooks[this].OnHyperlinkEnter();
 
     local uri = _G.arg1;
-    if not isItemUri(uri) then
+    local scheme = ChatSuey.UriComponents(uri);
+
+    if scheme ~= ChatSuey.UriSchemes.ITEM then
         return;
     end
 
@@ -24,7 +21,9 @@ local onHyperlinkLeave = function ()
     hooks[this].OnHyperlinkLeave();
 
     local uri = _G.arg1;
-    if not isItemUri(uri) then
+    local scheme = ChatSuey.UriComponents(uri);
+
+    if scheme ~= ChatSuey.UriSchemes.ITEM then
         return;
     end
 

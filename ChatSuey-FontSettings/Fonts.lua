@@ -1,6 +1,21 @@
-ChatSuey.FONTS = {
-    ["Arial Narrow"] = "Fonts\\ARIALN.TTF",
-    ["Friz Quadrata"] = "Fonts\\FRIZQT__.TTF",
-    ["Skurri"] = "Fonts\\skurri.ttf",
-    ["Morpheus"] = "Fonts\\MORPHEUS.ttf",
+ChatSuey.Fonts = {
+    ARIAL_NARROW = {
+        name = "Arial Narrow",
+        path = "Fonts\\ARIALN.TTF",
+    },
+
+    FRIZ_QUADRATA = {
+        name = "Friz Quadrata",
+        path = "Fonts\\FRIZQT__.TTF",
+    },
+
+    MORPHEUS = {
+        name = "Morpheus",
+        path = "Fonts\\MORPHEUS.ttf",
+    },
+
+    SKURRI = {
+        name = "Skurri",
+        path = "Fonts\\skurri.ttf",
+    },
 };

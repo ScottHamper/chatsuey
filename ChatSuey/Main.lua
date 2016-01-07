@@ -3,11 +3,22 @@ local ChatSuey = _G.ChatSuey;
 
 local ARGB_PATTERN = "%x%x%x%x%x%x%x%x";
 
+ChatSuey.UriSchemes = {
+    ITEM = "item",
+    PLAYER = "player",
+    TIME = "time",
+    CHANNEL = "channel",
+};
+
+ChatSuey.Uri = function (scheme, path)
+    return string.format("%s:%s", scheme, path);
+end;
+
 ChatSuey.Hyperlink = function (uri, text, color)
     local link = string.format("|H%s|h[%s]|h", uri, text);
 
     if color then
-        color = ChatSuey.COLORS[string.upper(color)] or color;
+        color = ChatSuey.Colors[string.upper(color)] or color;
 
         if not string.find(color, ARGB_PATTERN) then
             error("Invalid color value: " .. color);

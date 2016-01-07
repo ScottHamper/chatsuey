@@ -1,7 +1,7 @@
 local _G = getfenv();
 local ChatSuey = _G.ChatSuey;
 local hooks = ChatSuey.HookTable:new();
-local LS = ChatSuey.LOCALES[_G.GetLocale()].Strings;
+local LS = ChatSuey.Locales[_G.GetLocale()].Strings;
 
 local ROOT_OPTION = {
     text = LS["Timestamps"],

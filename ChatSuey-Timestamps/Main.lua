@@ -17,26 +17,23 @@ local addMessage = function (self, text, red, green, blue, messageId, holdTime)
     local localTime = date(localFormat, now);
     local color = config.useConsistentColor and config.color or nil;
 
-    local timestamp = ChatSuey.Hyperlink("time:" .. utcTime, localTime, color);
+    local uri = ChatSuey.Uri(ChatSuey.UriSchemes.TIME, utcTime);
+    local timestamp = ChatSuey.Hyperlink(uri, localTime, color);
 
     text = timestamp .. " " .. text;
     hooks[self].AddMessage(self, text, red, green, blue, messageId, holdTime);
-end;
-
-local isTimeUri = function (uri)
-    local scheme, _ = ChatSuey.UriComponents(uri);
-    return scheme == "time";
 end;
 
 local onHyperlinkEnter = function ()
     hooks[this].OnHyperlinkEnter();
 
     local uri = _G.arg1;
-    if not isTimeUri(uri) then
+    local scheme, utcTime = ChatSuey.UriComponents(uri);
+
+    if scheme ~= ChatSuey.UriSchemes.TIME then
         return;
     end
 
-    local _, utcTime = ChatSuey.UriComponents(uri);
     _G.GameTooltip_SetDefaultAnchor(_G.GameTooltip, UIParent);
     _G.GameTooltip:SetText(utcTime);
     _G.GameTooltip:Show();
@@ -46,7 +43,9 @@ local onHyperlinkLeave = function ()
     hooks[this].OnHyperlinkLeave();
 
     local uri = _G.arg1;
-    if not isTimeUri(uri) then
+    local scheme = ChatSuey.UriComponents(uri);
+
+    if scheme ~= ChatSuey.UriSchemes.TIME then
         return;
     end
 
@@ -55,9 +54,10 @@ end;
 
 local onHyperlinkClick = function ()
     local uri = _G.arg1;
+    local scheme = ChatSuey.UriComponents(uri);
 
     -- NoOp to prevent an "Unknown link type" error
-    if isTimeUri(uri) then
+    if scheme == ChatSuey.UriSchemes.TIME then
         return;
     end
 
@@ -66,7 +66,6 @@ end;
 
 for i = 1, _G.NUM_CHAT_WINDOWS do
     local chatFrame = _G["ChatFrame" .. i];
-
     hooks:RegisterFunc(chatFrame, "AddMessage", addMessage);
     hooks:RegisterScript(chatFrame, "OnHyperlinkEnter", onHyperlinkEnter);
     hooks:RegisterScript(chatFrame, "OnHyperlinkLeave", onHyperlinkLeave);

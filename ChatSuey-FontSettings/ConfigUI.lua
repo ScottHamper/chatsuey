@@ -1,7 +1,7 @@
 local _G = getfenv();
 local ChatSuey = _G.ChatSuey;
 local hooks = ChatSuey.HookTable:new();
-local LS = ChatSuey.LOCALES[_G.GetLocale()].Strings;
+local LS = ChatSuey.Locales[_G.GetLocale()].Strings;
 
 local ROOT_OPTION = {
     text = LS["Font"],
@@ -60,10 +60,10 @@ local familyOption = function (chatFrame, family)
     local config = ChatSuey.DB.Config.Font[chatFrame:GetName()];
 
     return {
-        text = family,
-        checked = config.family == family,
+        text = family.name,
+        checked = config.path == family.path,
         func = function ()
-            config.family = family;
+            config.path = family.path;
             ChatSuey.SetFont(chatFrame);
         end,
     };
@@ -92,13 +92,14 @@ local initialize = function (frame, level)
         _G.UIDropDownMenu_AddButton(outlineOption(chatFrame, LS["Thick"], "THICKOUTLINE"), 2);
         _G.UIDropDownMenu_AddButton(SPACER, 2);
 
-        -- TODO: Dynamically enumerate fonts based off ChatSuey.FONTS table,
+        -- TODO: Dynamically enumerate fonts based off ChatSuey.Fonts table,
         -- but maintain ordering. Will make adding fonts later easier.
         addHeader(LS["Family"], 2);
-        _G.UIDropDownMenu_AddButton(familyOption(chatFrame, "Arial Narrow"), 2);
-        _G.UIDropDownMenu_AddButton(familyOption(chatFrame, "Friz Quadrata"), 2);
-        _G.UIDropDownMenu_AddButton(familyOption(chatFrame, "Skurri"), 2);
-        _G.UIDropDownMenu_AddButton(familyOption(chatFrame, "Morpheus"), 2);
+        local fonts = ChatSuey.Fonts;
+        _G.UIDropDownMenu_AddButton(familyOption(chatFrame, fonts.ARIAL_NARROW), 2);
+        _G.UIDropDownMenu_AddButton(familyOption(chatFrame, fonts.FRIZ_QUADRATA), 2);
+        _G.UIDropDownMenu_AddButton(familyOption(chatFrame, fonts.MORPHEUS), 2);
+        _G.UIDropDownMenu_AddButton(familyOption(chatFrame, fonts.SKURRI), 2);
         return;
     end
 

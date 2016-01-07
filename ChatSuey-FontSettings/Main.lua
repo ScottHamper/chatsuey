@@ -5,7 +5,7 @@ ChatSuey.SetFont = function (chatFrame)
     local config = ChatSuey.DB.Config.Font[chatFrame:GetName()];
     local _, size, _ = chatFrame:GetFont();
 
-    chatFrame:SetFont(ChatSuey.FONTS[config.family], size, config.outline);
+    chatFrame:SetFont(config.path, size, config.outline);
 end;
 
 for i = 1, _G.NUM_CHAT_WINDOWS do

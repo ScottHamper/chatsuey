@@ -2,7 +2,7 @@ local _G = getfenv();
 local ChatSuey = _G.ChatSuey;
 
 -- English constants for accessing colors in code from dependent addons.
-ChatSuey.COLORS = {
+ChatSuey.Colors = {
     -- CSS2 Colors
     BLACK = "ff000000",
     GRAY = "ff808080",
@@ -55,8 +55,8 @@ ChatSuey.COLORS = {
 };
 
 -- Localized constants for accessing colors from user-entered strings.
-local C = ChatSuey.COLORS;
-local LS = ChatSuey.LOCALES[_G.GetLocale()].Strings;
+local C = ChatSuey.Colors;
+local LS = ChatSuey.Locales[_G.GetLocale()].Strings;
 C[LS["BLACK"]] = C.BLACK;
 C[LS["GRAY"]] = C.GRAY;
 C[LS["SILVER"]] = C.SILVER;

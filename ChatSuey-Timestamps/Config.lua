@@ -7,19 +7,18 @@ local defaults = {
     use24HourClock = true,
     includeSeconds = false,
     useConsistentColor = false,
-    color = ChatSuey.COLORS.WHITE,
+    color = ChatSuey.Colors.WHITE,
 };
 
-setmetatable(ChatSuey.DB.Config.Timestamps, {
-    __index = function (self, key)
-        local config = {
-            use24HourClock = defaults.use24HourClock,
-            includeSeconds = defaults.includeSeconds,
-            useConsistentColor = defaults.useConsistentColor,
-            color = defaults.color,
-        };
+for i = 1, _G.NUM_CHAT_WINDOWS do
+    local chatFrameName = "ChatFrame" .. i;
+    local configs = ChatSuey.DB.Config.Timestamps;
+    configs[chatFrameName] = configs[chatFrameName] or {};
 
-        self[key] = config;
-        return config;
-    end,
-});
+    setmetatable(configs[chatFrameName], {
+        __index = function (self, key)
+            self[key] = defaults[key];
+            return defaults[key];
+        end,
+    });
+end

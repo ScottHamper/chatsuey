@@ -5,8 +5,6 @@
 ## Dependences: ChatSuey
 ## Notes: Adds timestamps to chat messages. Right-click a chat tab to configure settings.
 
-Namespace.lua
-
 i18n\enUS.lua
 
 Config.lua

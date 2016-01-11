@@ -1,0 +1,8 @@
+## Interface: 11200
+## Title: ChatSuey - Mentions
+## Author: Scott Hamper
+## Version: 1.1.0
+## Dependencies: ChatSuey
+## Notes: Highlights mentions of your character's name in chat.
+
+Main.lua

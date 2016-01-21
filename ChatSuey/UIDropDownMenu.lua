@@ -1,4 +1,3 @@
-local _G = getfenv();
 local ChatSuey = _G.ChatSuey;
 local hooks = ChatSuey.HookTable:new();
 
@@ -15,7 +14,15 @@ local uiDropDownMenu_AddButton = function (info, level)
     local index = dropDown.numButtons + 1;
 
     buttonInfo[level] = buttonInfo[level] or {};
-    buttonInfo[level][index] = info;
+    buttonInfo[level][index] = {};
+
+    -- Blizzard started re-using the same `info` table for
+    -- all drop down menu buttons. Unfortunately, we have to
+    -- undo this optimization for our purposes.
+    -- Memory churn, ho!
+    for key, value in pairs(info) do
+        buttonInfo[level][index][key] = value;
+    end
 
     hooks[_G].UIDropDownMenu_AddButton(info, level);
 end;

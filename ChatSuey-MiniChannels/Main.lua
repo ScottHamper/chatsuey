@@ -1,4 +1,3 @@
-local _G = getfenv();
 local ChatTypes = _G.ChatTypeInfo;
 local ChatSuey = _G.ChatSuey;
 local hooks = ChatSuey.HookTable:new();
@@ -6,6 +5,7 @@ local LS = ChatSuey.Locales[_G.GetLocale()].Strings;
 
 local MINI_CHANNELS = {
     [ChatTypes.PARTY.id] = { alias = LS["P"] },
+    [ChatTypes.PARTY_LEADER.id] = { alias = LS["PL"] },
     [ChatTypes.RAID.id] = { alias = LS["R"] },
     [ChatTypes.GUILD.id] = { alias = LS["G"] },
     [ChatTypes.OFFICER.id] = { alias = LS["O"] },
@@ -25,12 +25,23 @@ local MINI_CHANNELS = {
     [ChatTypes.CHANNEL10.id] = { alias = "10", number = 10 },
 };
 
--- E.g., "[1. General] [Chatsuey]:"
-local CHANNEL_HEADER_FORMAT = "^%[[^%]]-%] ";
+-- E.g., "|Hchannel:GUILD|h[Guild]|h"
+local CHANNEL_HEADER_FORMAT = "|H(channel:[^|]-)|h[^|]-|h";
 
--- E.g., "[Chatsuey] says:"
--- "|Hplayer:Chatsuey|h[Chatsuey]|h says:"
-local ROLEPLAY_HEADER_FORMAT = "^([^%s]+) %l+";
+-- E.g., "|Hplayer:Chatsuey|h[Chatsuey]|h says:"
+local ROLEPLAY_HEADER_FORMAT = "^(.-|Hplayer:[^%s]+) %l+";
+
+local CHANNEL_PATH_FORMAT = "^[cC][hH][aA][nN][nN][eE][lL]:(%d+)$";
+
+-- Don't want to minimize channel headers in change/join/leave
+-- notifications, so we'll check the beginning of messages to
+-- make sure they don't start the same as those notifications.
+-- All notifications are in a similar format to:
+-- "Changed Channel: |Hchannel:%d|h[%s]|h"
+-- We just want the localized text before the channel link.
+local CHANGED_CHANNEL_TEXT = _G.CHAT_YOU_CHANGED_NOTICE:match("^[^|]+");
+local JOINED_CHANNEL_TEXT = _G.CHAT_YOU_JOINED_NOTICE:match("^[^|]+");
+local LEFT_CHANNEL_TEXT = _G.CHAT_YOU_LEFT_NOTICE:match("^[^|]+");
 
 local isRoleplayMessage = function (messageId)
     return messageId == ChatTypes.SAY.id
@@ -41,47 +52,57 @@ end;
 local addMessage = function (self, text, red, green, blue, messageId, holdTime)
     local channel = MINI_CHANNELS[messageId];
 
-    if channel then
-        local header = string.format("[%s] ", channel.alias);
-        text = string.gsub(text, CHANNEL_HEADER_FORMAT, header);
+    if channel
+        and text:find(CHANGED_CHANNEL_TEXT) ~= 1
+        and text:find(JOINED_CHANNEL_TEXT) ~= 1
+        and text:find(LEFT_CHANNEL_TEXT) ~= 1
+    then
+        text = text:gsub(CHANNEL_HEADER_FORMAT, function (uri)
+            return ChatSuey.Hyperlink(uri, channel.alias);
+        end);
     end
 
     if isRoleplayMessage(messageId) then
-        text = string.gsub(text, ROLEPLAY_HEADER_FORMAT, "%1");
+        text = text:gsub(ROLEPLAY_HEADER_FORMAT, "%1");
     end
 
     hooks[self].AddMessage(self, text, red, green, blue, messageId, holdTime);
 end;
 
-local onHyperlinkEnter = function ()
-    hooks[this].OnHyperlinkEnter();
+local onHyperlinkEnter = function (self, uri, link)
+    hooks[self].OnHyperlinkEnter(self, uri, link);
 
-    local uri = _G.arg1;
-    local scheme, path = ChatSuey.UriComponents(uri);
+    local scheme, path, text = ChatSuey.HyperlinkComponents(link);
 
     if scheme ~= ChatSuey.UriSchemes.CHANNEL then
         return;
     end
 
-    local messageId = tonumber(path);
-    local channel = MINI_CHANNELS[messageId];
-
-    if not (channel and channel.number) then
+    local channel = path:match(CHANNEL_PATH_FORMAT);
+    if not channel then
         return;
     end
 
-    local _, channelName = _G.GetChannelName(channel.number);
-    local tooltip = string.format("%d. %s", channel.number, channelName)
+    local messageId = ChatTypes["CHANNEL" .. channel].id;
+    if text ~= MINI_CHANNELS[messageId].alias then
+        return;
+    end
+
+    local _, channelName = _G.GetChannelName(channel);
+    if not channelName then
+        return;
+    end
+
+    local tooltip = ("%d. %s"):format(channel, channelName)
 
     _G.GameTooltip_SetDefaultAnchor(_G.GameTooltip, _G.UIParent);
     _G.GameTooltip:SetText(tooltip);
     _G.GameTooltip:Show();
 end;
 
-local onHyperlinkLeave = function ()
-    hooks[this].OnHyperlinkLeave();
+local onHyperlinkLeave = function (self, uri, link)
+    hooks[self].OnHyperlinkLeave(self, uri, link);
 
-    local uri = _G.arg1;
     local scheme = ChatSuey.UriComponents(uri);
 
     if scheme ~= ChatSuey.UriSchemes.CHANNEL then
@@ -97,3 +118,9 @@ for i = 1, _G.NUM_CHAT_WINDOWS do
     hooks:RegisterScript(chatFrame, "OnHyperlinkEnter", onHyperlinkEnter);
     hooks:RegisterScript(chatFrame, "OnHyperlinkLeave", onHyperlinkLeave);
 end
+
+-- Tooltips get stuck open when scrolling the chat window.
+hooks:RegisterFunc(_G, "FloatingChatFrame_OnMouseScroll", function (self, delta)
+    hooks[_G].FloatingChatFrame_OnMouseScroll(self, delta);
+    _G.GameTooltip:Hide();
+end);

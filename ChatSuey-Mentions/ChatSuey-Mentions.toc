@@ -1,4 +1,4 @@
-## Interface: 11200
+## Interface: 30300
 ## Title: ChatSuey - Mentions
 ## Author: Scott Hamper
 ## Version: 1.1.0

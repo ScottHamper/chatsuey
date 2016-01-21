@@ -1,4 +1,3 @@
-local _G = getfenv();
 local ChatSuey = _G.ChatSuey;
 local hooks = ChatSuey.HookTable:new();
 local LS = ChatSuey.Locales[_G.GetLocale()].Strings;
@@ -32,7 +31,7 @@ local sizeOption = function (chatFrame, size)
     local _, currentSize, _ = chatFrame:GetFont();
 
     return {
-        text = string.format(_G.FONT_SIZE_TEMPLATE, size),
+        text = _G.FONT_SIZE_TEMPLATE:format(size),
         value = size,
         checked = size == floor(currentSize + 0.5),
         func = function ()
@@ -70,9 +69,8 @@ local familyOption = function (chatFrame, family)
 end;
 
 local initialize = function (frame, level)
-    hooks[frame].initialize(level);
-
     if _G.UIDROPDOWNMENU_MENU_LEVEL == 1 then
+        hooks[frame].initialize(level);
         local fontSizeIndex = ChatSuey.UIDropDownMenu_IndexOf(_G.FONT_SIZE);
 
         ChatSuey.UIDropDownMenu_ReplaceButton(1, fontSizeIndex, ROOT_OPTION);
@@ -110,7 +108,7 @@ local initialize = function (frame, level)
         for i = 8, 20 do
             _G.UIDropDownMenu_AddButton(sizeOption(chatFrame, i), 3);
         end
-   end
+    end
 end;
 
 for i = 1, _G.NUM_CHAT_WINDOWS do

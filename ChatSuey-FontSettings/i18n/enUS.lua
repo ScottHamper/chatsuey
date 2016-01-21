@@ -2,7 +2,7 @@
 -- how to implement a locale, as well as being a list of all the
 -- localized strings used.local _G = getfenv();
 
-local LS = ChatSuey.Locales["enUS"].Strings;
+local LS = _G.ChatSuey.Locales["enUS"].Strings;
 
 LS["Font"] = "Font";
 LS["Size"] = "Size";

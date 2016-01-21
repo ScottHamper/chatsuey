@@ -1,4 +1,3 @@
-local _G = getfenv();
 local ChatSuey = _G.ChatSuey;
 ChatSuey.DB.Config = ChatSuey.DB.Config or {};
 ChatSuey.DB.Config.Font = ChatSuey.DB.Config.Font or {};

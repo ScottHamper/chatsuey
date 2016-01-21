@@ -1,9 +1,9 @@
 ## Interface: 30300
-## Title: ChatSuey - Player Links
+## Title: ChatSuey - Link Hover
 ## Author: Scott Hamper
 ## X-Website: http://www.scotthamper.com/chatsuey/
 ## Version: 1.1.0
 ## Dependencies: ChatSuey
-## Notes: Alt-Click a player link to invite the player to your party.
+## Notes: Hovering the mouse cursor over a hyperlink will immediately display its tooltip, when relevant.
 
 Main.lua

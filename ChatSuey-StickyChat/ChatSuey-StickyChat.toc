@@ -1,8 +1,0 @@
-## Interface: 11200
-## Title: ChatSuey - Sticky Chat
-## Author: Scott Hamper
-## X-Website: http://www.scotthamper.com/chatsuey/
-## Version: 1.1.0
-## Notes: Enables "sticky" chat for whispers, officer chat, and channel messages. The chat edit box will remain on a channel until changed (like it does with say/party/guild chat).
-
-Main.lua

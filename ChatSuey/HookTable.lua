@@ -1,4 +1,3 @@
-local _G = getfenv();
 local HookTable = {};
 
 function HookTable:new()
@@ -18,7 +17,7 @@ function HookTable:RegisterScript(frame, script, handler)
     self[frame] = self[frame] or {};
 
     if self[frame][script] then
-        local err = string.format("Attempted to register multiple \"%s\" handlers for the same frame", script);
+        local err = ("Attempted to register multiple \"%s\" handlers for the same frame"):format(script);
         error(err);
     end
 
@@ -30,7 +29,7 @@ function HookTable:RegisterFunc(table, funcName, func)
     self[table] = self[table] or {};
 
     if self[table][funcName] then
-        local err = string.format("Attempted to register multiple \"%s\" hooks for the same table", funcName);
+        local err = ("Attempted to register multiple \"%s\" hooks for the same table"):format(funcName);
         error(err);
     end
 

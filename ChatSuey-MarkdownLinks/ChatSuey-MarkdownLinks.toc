@@ -1,9 +1,0 @@
-## Interface: 11200
-## Title: ChatSuey - Markdown Links
-## Author: Scott Hamper
-## X-Website: http://www.scotthamper.com/chatsuey/
-## Version: 1.1.0
-## Dependencies: ChatSuey
-## Notes: Create custom hyperlinks as you type, using a Markdown-ish syntax.
-
-Main.lua

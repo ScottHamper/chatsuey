@@ -1,4 +1,3 @@
-local _G = getfenv();
 local ChatSuey = _G.ChatSuey;
 local enUS = ChatSuey.Locale:new();
 local LS = enUS.Strings;

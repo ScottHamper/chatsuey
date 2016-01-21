@@ -1,37 +1,44 @@
-local _G = getfenv();
 local ChatSuey = _G.ChatSuey;
 
-local ARGB_PATTERN = "%x%x%x%x%x%x%x%x";
+local ARGB_PATTERN = ("%x"):rep(8);
 
 ChatSuey.UriSchemes = {
+    ACHIEVEMENT = "achievement",
+    ENCHANT = "enchant",
+    GLYPH = "glyph",
     ITEM = "item",
     PLAYER = "player",
+    QUEST = "quest",
+    SPELL = "spell",
+    TALENT = "talent",
+    TRADE = "trade",
+
     TIME = "time",
     CHANNEL = "channel",
 };
 
 ChatSuey.Uri = function (scheme, path)
-    return string.format("%s:%s", scheme, path);
+    return ("%s:%s"):format(scheme, path);
 end;
 
 ChatSuey.Hyperlink = function (uri, text, color)
-    local link = string.format("|H%s|h[%s]|h", uri, text);
+    local link = ("|H%s|h[%s]|h"):format(uri, text);
 
     if color then
-        color = ChatSuey.Colors[string.upper(color)] or color;
+        color = ChatSuey.Colors[color:upper()] or color;
 
-        if not string.find(color, ARGB_PATTERN) then
+        if not color:find(ARGB_PATTERN) then
             error("Invalid color value: " .. color);
         end
 
-        link = string.format("|c%s%s|r", color, link);
+        link = ("|c%s%s|r"):format(color, link);
     end
 
     return link;
 end;
 
 ChatSuey.HyperlinkComponents = function (link)
-    local _, _, color, scheme, path, text = string.find(link, "^|?c?(.-)|H(.-):(.-)|h%[(.-)%]|h|?r?$");
+    local _, _, color, scheme, path, text = link:find("^|?c?(.-)|H(.-):(.-)|h%[(.-)%]|h|?r?$");
 
     if color == "" then
         color = nil;
@@ -41,7 +48,7 @@ ChatSuey.HyperlinkComponents = function (link)
 end;
 
 ChatSuey.UriComponents = function (uri)
-    local _, _, scheme, path = string.find(uri, "^(.-):(.+)$");
+    local _, _, scheme, path = uri:find("^(.-):(.+)$");
     return scheme, path;
 end;
 

@@ -1,4 +1,4 @@
-## Interface: 11200
+## Interface: 30300
 ## Title: ChatSuey - Web Links
 ## Author: Scott Hamper
 ## X-Website: http://www.scotthamper.com/chatsuey/

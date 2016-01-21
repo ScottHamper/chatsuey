@@ -1,4 +1,3 @@
-local _G = getfenv();
 local ChatSuey = _G.ChatSuey;
 local hooks = ChatSuey.HookTable:new();
 
@@ -6,34 +5,30 @@ local DIALOG_NAME = "ChatSuey_WebLinkDialog";
 local URL_PATTERN = "(|?%a[%w+.%-]-://[%w%-._~:/?#%[%]@!$&'()*+,;=%%]+)";
 local LINK_COLOR = ChatSuey.Colors.TOKEN;
 
-local parseHyperlink = function (link)
-    -- We don't want to replace the text of an existing chat hyperlink
-    -- This is admittedly a rare edge case.
-    if string.sub(link, 1, 1) == "|" then
-        return link;
-    end
-
-    return ChatSuey.Hyperlink(link, link, LINK_COLOR);
+ChatSuey.test = function ()
+    ChatFrame1:AddMessage("|cffff0000http://google.com|r");
 end;
 
-local addMessage = function (self, text, red, green, blue, messageId, holdTime)
-    text = string.gsub(text, URL_PATTERN, parseHyperlink);
-    hooks[self].AddMessage(self, text, red, green, blue, messageId, holdTime);
+local addMessage = function (self, text, ...)
+    text = text:gsub(URL_PATTERN, function (link)
+        -- Players can't send custom hyperlinks in chat in WotLK,
+        -- but some private servers broadcast messages to users with
+        -- URLs wrapped in a color, e.g., "|cffff0000http://google.com|r"
+        if link:sub(1, 2) == "|c" then
+            link = link:sub(11);
+        end
+
+        return ChatSuey.Hyperlink(link, link, LINK_COLOR);
+    end);
+
+    hooks[self].AddMessage(self, text, ...);
 end;
 
 local clickedUrl = "";
 
-local onHyperlinkClick = function ()
-    local uri = _G.arg1;
-    local link = _G.arg2;
-
-    if not string.find(uri, URL_PATTERN) then
-        hooks[this].OnHyperlinkClick();
-        return;
-    end
-
-    if _G.IsShiftKeyDown() and _G.ChatFrameEditBox:IsVisible() then
-        _G.ChatFrameEditBox:Insert(link);
+local onHyperlinkClick = function (self, uri, ...)
+    if not uri:find(URL_PATTERN) then
+        hooks[self].OnHyperlinkClick(self, uri, ...);
         return;
     end
 

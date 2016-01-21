@@ -1,9 +1,9 @@
-## Interface: 11200
+## Interface: 30300
 ## Title: ChatSuey - Mini Channels
 ## Author: Scott Hamper
 ## Version: 1.1.0
 ## Dependencies: ChatSuey
-## OptionalDeps: ChatSuey-Timestamps, ChatSuey-ChannelLinks
+## OptionalDeps: ChatSuey-Timestamps
 ## Notes: Abbreviates channel headers. E.g., [Party] becomes [P] and [1. General] becomes [1].
 
 i18n\enUS.lua

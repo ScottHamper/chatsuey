@@ -1,4 +1,3 @@
-local _G = getfenv();
 local ChatSuey = _G.ChatSuey;
 
 -- English constants for accessing colors in code from dependent addons.
@@ -33,7 +32,7 @@ ChatSuey.Colors = {
     HEIRLOOM = "ffe6cc80",
     TOKEN = "ff00ccff",
     BLIZZARD = "ff00ccff",
-    
+
     -- WoW Class Colors
     DEATHKNIGHT = "ffc41f3b",
     DEMONHUNTER = "ff4dd827",

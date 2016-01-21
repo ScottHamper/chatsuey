@@ -2,9 +2,10 @@
 -- how to implement a locale, as well as being a list of all the
 -- localized strings used.
 
-local LS = ChatSuey.Locales["enUS"].Strings;
+local LS = _G.ChatSuey.Locales["enUS"].Strings;
 
 LS["P"] = "P";   -- Party
+LS["PL"] = "PL"; -- Party Leader
 LS["R"] = "R";   -- Raid
 LS["G"] = "G";   -- Group
 LS["O"] = "O";   -- Officer

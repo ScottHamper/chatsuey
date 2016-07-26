@@ -23,7 +23,7 @@ Differences From Vanilla
 
 TODO
 ----
-- Add support for battle pet links to "LinkHover" addon. May be missing support for other "new" link types as well.
-- Battle.net friend notifications appear to be anchored to the chat window. When the "RemoveButtons" addon is enabled, these notifications should be shifted to the right to be flush with the left edge of the chat window.
-- Possibly add support for NPC say/yell/whisper to "MiniChannels" addon.
-- May need to add support for "BN_WHISPER" chat type to "MiniChannels" addon.
+- Add support for battle pet links to `LinkHover` addon. May be missing support for other "new" link types as well.
+- Battle.net friend notifications appear to be anchored to the chat window. When the `RemoveButtons` addon is enabled, these notifications should be shifted to the right to be flush with the left edge of the chat window.
+- Possibly add support for NPC say/yell/whisper to `MiniChannels` addon.
+- May need to add support for `BN_WHISPER` chat type to `MiniChannels` addon.

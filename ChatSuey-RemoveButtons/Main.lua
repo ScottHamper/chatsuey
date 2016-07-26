@@ -17,6 +17,24 @@ end;
 hide(_G.FriendsMicroButton);
 hide(_G.ChatFrameMenuButton);
 
+-- Battle.net toasts are anchored flush with the edge of the chat frame's
+-- buttons by default. Since we've removed the buttons, we want toasts to
+-- be flush with the chat frame instead.
+hooks:RegisterFunc(_G, "BNToastFrame_UpdateAnchor", function (forceAnchor)
+    local chatFrame = _G.DEFAULT_CHAT_FRAME;
+    local originalButtonFrame = chatFrame.buttonFrame;
+
+    -- Instead of re-implementing the entirety of Blizzard's
+    -- BNToastFrame_UpdateAnchor just to change a line or two,
+    -- we'll temporarily change the `buttonFrame` reference
+    -- to the chatFrame itself.
+    chatFrame.buttonFrame = chatFrame;
+
+    hooks[_G].BNToastFrame_UpdateAnchor(forceAnchor);
+
+    chatFrame.buttonFrame = originalButtonFrame;
+end);
+
 for i = 1, _G.NUM_CHAT_WINDOWS do
     local frameName = "ChatFrame" .. i;
     local chatFrame = _G[frameName];

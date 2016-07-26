@@ -8,11 +8,11 @@ local MINI_CHANNELS = {
     [ChatTypes.PARTY_LEADER.id] = { alias = LS["PL"] },
     [ChatTypes.RAID.id] = { alias = LS["R"] },
     [ChatTypes.GUILD.id] = { alias = LS["G"] },
+    [ChatTypes.INSTANCE_CHAT.id] = { alias = LS["I"] },
+    [ChatTypes.INSTANCE_CHAT_LEADER.id] = { alias = LS["IL"] },
     [ChatTypes.OFFICER.id] = { alias = LS["O"] },
     [ChatTypes.RAID_LEADER.id] = { alias = LS["RL"] },
     [ChatTypes.RAID_WARNING.id] = { alias = LS["RW"] },
-    [ChatTypes.BATTLEGROUND.id] = { alias = LS["BG"] },
-    [ChatTypes.BATTLEGROUND_LEADER.id] = { alias = LS["BL"] },
     [ChatTypes.CHANNEL1.id] = { alias = "1", number = 1 },
     [ChatTypes.CHANNEL2.id] = { alias = "2", number = 2 },
     [ChatTypes.CHANNEL3.id] = { alias = "3", number = 3 },
@@ -118,9 +118,3 @@ for i = 1, _G.NUM_CHAT_WINDOWS do
     hooks:RegisterScript(chatFrame, "OnHyperlinkEnter", onHyperlinkEnter);
     hooks:RegisterScript(chatFrame, "OnHyperlinkLeave", onHyperlinkLeave);
 end
-
--- Tooltips get stuck open when scrolling the chat window.
-hooks:RegisterFunc(_G, "FloatingChatFrame_OnMouseScroll", function (self, delta)
-    hooks[_G].FloatingChatFrame_OnMouseScroll(self, delta);
-    _G.GameTooltip:Hide();
-end);

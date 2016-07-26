@@ -43,9 +43,3 @@ for i = 1, _G.NUM_CHAT_WINDOWS do
     hooks:RegisterScript(chatFrame, "OnHyperlinkEnter", onHyperlinkEnter);
     hooks:RegisterScript(chatFrame, "OnHyperlinkLeave", onHyperlinkLeave);
 end
-
--- Tooltips get stuck open when scrolling the chat window.
-hooks:RegisterFunc(_G, "FloatingChatFrame_OnMouseScroll", function (self, delta)
-    hooks[_G].FloatingChatFrame_OnMouseScroll(self, delta);
-    _G.GameTooltip:Hide();
-end);

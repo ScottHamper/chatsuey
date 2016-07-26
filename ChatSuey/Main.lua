@@ -4,6 +4,7 @@ local ARGB_PATTERN = ("%x"):rep(8);
 
 ChatSuey.UriSchemes = {
     ACHIEVEMENT = "achievement",
+    BATTLE_PET = "battlepet",
     ENCHANT = "enchant",
     GLYPH = "glyph",
     ITEM = "item",
@@ -58,10 +59,8 @@ end;
 local eventFrame = _G.CreateFrame("FRAME");
 eventFrame:RegisterEvent("ADDON_LOADED");
 
-eventFrame:SetScript("OnEvent", function ()
-    local addon = _G.arg1;
-
-    if addon ~= "ChatSuey" then
+eventFrame:SetScript("OnEvent", function (self, event, addon)
+    if event ~= "ADDON_LOADED" or addon ~= "ChatSuey" then
         return;
     end
 

@@ -1,6 +1,6 @@
-ChatSuey - WotLK
-================
-A port of ChatSuey for Wrath of the Lich King (WoW 3.3.5).
+ChatSuey - Retail
+=================
+A port of ChatSuey for the current retail version of WoW (7.0).
 Learn about the vanilla version at the [project website](http://www.scotthamper.com/chatsuey/).
 
 Installation
@@ -20,3 +20,10 @@ Differences From Vanilla
 - `ItemLinkHover` was renamed to `LinkHover` and expanded to include new types of hyperlinks (e.g., talents).
 - `PlayerLinks` has reduced functionality - it's now impossible to link players in chat, and addons can no longer target units.
 - `EditOnTop` is not ported yet.
+
+TODO
+----
+- Add support for battle pet links to "LinkHover" addon. May be missing support for other "new" link types as well.
+- Battle.net friend notifications appear to be anchored to the chat window. When the "RemoveButtons" addon is enabled, these notifications should be shifted to the right to be flush with the left edge of the chat window.
+- Possibly add support for NPC say/yell/whisper to "MiniChannels" addon.
+- May need to add support for "BN_WHISPER" chat type to "MiniChannels" addon.

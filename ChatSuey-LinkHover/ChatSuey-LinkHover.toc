@@ -1,4 +1,4 @@
-## Interface: 30300
+## Interface: 70000
 ## Title: ChatSuey - Link Hover
 ## Author: Scott Hamper
 ## X-Website: http://www.scotthamper.com/chatsuey/

@@ -1,23 +1,15 @@
 local ChatSuey = _G.ChatSuey;
 local hooks = ChatSuey.HookTable:new();
+local LS = ChatSuey.Locales[_G.GetLocale()].Strings;
 
 local DIALOG_NAME = "ChatSuey_WebLinkDialog";
+local DIALOG_PADDING = 80; -- Total horizontal padding around editBox
+local EDIT_BOX_WIDTH = 500;
 local URL_PATTERN = "(|?%a[%w+.%-]-://[%w%-._~:/?#%[%]@!$&'()*+,;=%%]+)";
 local LINK_COLOR = ChatSuey.Colors.TOKEN;
 
-ChatSuey.test = function ()
-    ChatFrame1:AddMessage("|cffff0000http://google.com|r");
-end;
-
 local addMessage = function (self, text, ...)
     text = text:gsub(URL_PATTERN, function (link)
-        -- Players can't send custom hyperlinks in chat in WotLK,
-        -- but some private servers broadcast messages to users with
-        -- URLs wrapped in a color, e.g., "|cffff0000http://google.com|r"
-        if link:sub(1, 2) == "|c" then
-            link = link:sub(11);
-        end
-
         return ChatSuey.Hyperlink(link, link, LINK_COLOR);
     end);
 
@@ -33,7 +25,10 @@ local onHyperlinkClick = function (self, uri, ...)
     end
 
     clickedUrl = uri;
-    StaticPopup_Show(DIALOG_NAME);
+
+    local dialog = StaticPopup_Show(DIALOG_NAME);
+    dialog:SetWidth(EDIT_BOX_WIDTH + DIALOG_PADDING);
+    dialog.editBox:SetWidth(EDIT_BOX_WIDTH);
 end;
 
 for i = 1, _G.NUM_CHAT_WINDOWS do
@@ -43,38 +38,28 @@ for i = 1, _G.NUM_CHAT_WINDOWS do
 end
 
 _G.StaticPopupDialogs[DIALOG_NAME] = {
-    text = "Copy the URL into your clipboard (Ctrl-C):",
+    text = LS["Copy the URL into your clipboard (Ctrl-C):"],
     button1 = _G.CLOSE,
     timeout = 0,
     whileDead = true,
     hasEditBox = true,
-    hasWideEditBox = true,
     maxLetters = 500,
 
-    OnShow = function ()
-        local editBox = _G[this:GetName() .. "WideEditBox"];
-        editBox:SetText(clickedUrl);
-        editBox:HighlightText();
-
-        -- Fixes editBox bleeding out of the dialog boundaries
-        this:SetWidth(editBox:GetWidth() + 80);
-
-        -- Fixes close button overlapping the edit box
-        local closeButton = _G[this:GetName() .. "Button1"];
-        closeButton:ClearAllPoints();
-        closeButton:SetPoint("CENTER", editBox, "CENTER", 0, -30);
+    OnShow = function (self)
+        self.editBox:SetText(clickedUrl);
+        self.editBox:HighlightText();
     end,
 
-    OnHide = function ()
-        _G[this:GetName() .. "WideEditBox"]:SetText("");
+    OnHide = function (self)
+        self.editBox:SetText("");
         clickedUrl = "";
     end,
 
-    EditBoxOnEscapePressed = function ()
-        this:GetParent():Hide();
+    EditBoxOnEscapePressed = function (self)
+        self:GetParent():Hide();
     end,
 
-    EditBoxOnEnterPressed = function ()
-        this:GetParent():Hide();
+    EditBoxOnEnterPressed = function (self)
+        self:GetParent():Hide();
     end,
 };

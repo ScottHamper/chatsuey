@@ -29,7 +29,8 @@ local MINI_CHANNELS = {
 local CHANNEL_HEADER_FORMAT = "|H(channel:[^|]-)|h[^|]-|h";
 
 -- E.g., "|Hplayer:Chatsuey|h[Chatsuey]|h says:"
-local ROLEPLAY_HEADER_FORMAT = "^(.-|Hplayer:[^%s]+) %l+";
+-- Battle.net whispers use "|HBN" instead of just "|H"
+local ROLEPLAY_HEADER_FORMAT = "^(.-|HB?N?player:[^%s]+) %l+";
 
 local CHANNEL_PATH_FORMAT = "^[cC][hH][aA][nN][nN][eE][lL]:(%d+)$";
 
@@ -46,7 +47,8 @@ local LEFT_CHANNEL_TEXT = _G.CHAT_YOU_LEFT_NOTICE:match("^[^|]+");
 local isRoleplayMessage = function (messageId)
     return messageId == ChatTypes.SAY.id
         or messageId == ChatTypes.YELL.id
-        or messageId == ChatTypes.WHISPER.id;
+        or messageId == ChatTypes.WHISPER.id
+        or messageId == ChatTypes.BN_WHISPER.id;
 end;
 
 local addMessage = function (self, text, red, green, blue, messageId, holdTime)

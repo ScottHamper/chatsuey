@@ -25,4 +25,3 @@ TODO
 ----
 - Add support for battle pet links to `LinkHover` addon. May be missing support for other "new" link types as well.
 - Possibly add support for NPC say/yell/whisper to `MiniChannels` addon.
-- May need to add support for `BN_WHISPER` chat type to `MiniChannels` addon.

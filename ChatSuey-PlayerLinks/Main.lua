@@ -14,7 +14,6 @@ local onHyperlinkClick = function (self, uri, ...)
     hooks[self].OnHyperlinkClick(self, uri, ...);
 end;
 
-for i = 1, _G.NUM_CHAT_WINDOWS do
-    local chatFrame = _G["ChatFrame" .. i];
+ChatSuey.OnChatFrameReady(function (chatFrame)
     hooks:RegisterScript(chatFrame, "OnHyperlinkClick", onHyperlinkClick);
-end
+end);

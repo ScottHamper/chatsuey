@@ -7,15 +7,15 @@ local defaults = {
     path = ChatSuey.Fonts.ARIAL_NARROW.path,
 };
 
-for i = 1, _G.NUM_CHAT_WINDOWS do
-    local chatFrameName = "ChatFrame" .. i;
+ChatSuey.OnChatFrameReady(function (chatFrame)
+    local name = chatFrame:GetName();
     local configs = ChatSuey.DB.Config.Font;
-    configs[chatFrameName] = configs[chatFrameName] or {};
+    configs[name] = configs[name] or {};
 
-    setmetatable(configs[chatFrameName], {
+    setmetatable(configs[name], {
         __index = function (self, key)
             self[key] = defaults[key];
             return defaults[key];
         end,
     });
-end
+end);

@@ -1,4 +1,5 @@
 local ChatSuey = _G.ChatSuey;
+local hooks = ChatSuey.HookTable:new();
 
 local ARGB_PATTERN = ("%x"):rep(8);
 
@@ -51,6 +52,48 @@ end;
 ChatSuey.UriComponents = function (uri)
     local _, _, scheme, path = uri:find("^(.-):(.+)$");
     return scheme, path;
+end;
+
+local readyChatFrames = { };
+for i = 1, _G.NUM_CHAT_WINDOWS do
+    table.insert(readyChatFrames, _G["ChatFrame" .. i]);
+end
+
+local onChatFrameReadyCallbacks = { };
+local onChatFrameReady = function (chatFrame)
+    for _, callback in ipairs(onChatFrameReadyCallbacks) do
+        callback(chatFrame);
+    end
+end;
+
+-- When the "Social -> New Whispers" interface option is set
+-- to "New Tab" or "Both", Blizz creates additional chat frames
+-- that aren't part of the normal `_G.NUM_CHAT_WINDOWS` shtick.
+-- We need to know when one of these "temporary" frames has been
+-- created so that we can initialize our addon functionality.
+local temporaryWindows = { };
+hooks:RegisterFunc(_G, "FCF_OpenTemporaryWindow", function (chatType, chatTarget, sourceChatFrame, selectWindow)
+    local chatFrame = hooks[_G].FCF_OpenTemporaryWindow(chatType, chatTarget, sourceChatFrame, selectWindow);
+
+    -- Blizzard attempts to reuse previously opened temporary windows
+    -- that have since been closed. As a result, we need to make
+    -- sure that we don't execute our `onChatFrameReady` more than
+    -- once for any given window.
+    if not temporaryWindows[chatFrame] then
+        temporaryWindows[chatFrame] = true;
+        table.insert(readyChatFrames, chatFrame);
+        onChatFrameReady(chatFrame);
+    end
+
+    return chatFrame;
+end);
+
+ChatSuey.OnChatFrameReady = function (callback)
+    table.insert(onChatFrameReadyCallbacks, callback);
+
+    for _, chatFrame in ipairs(readyChatFrames) do
+        callback(chatFrame);
+    end
 end;
 
 -- SavedVariables are loaded after the addon has been parsed/executed,

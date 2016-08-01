@@ -58,7 +58,6 @@ local onEvent = function (self, event, message, sender, ...)
     hooks[self].OnEvent(self, event, message, sender, ...);
 end;
 
-for i = 1, _G.NUM_CHAT_WINDOWS do
-    local chatFrame = _G["ChatFrame" .. i];
+ChatSuey.OnChatFrameReady(function (chatFrame)
     hooks:RegisterScript(chatFrame, "OnEvent", onEvent);
-end
+end);

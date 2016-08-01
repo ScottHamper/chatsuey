@@ -31,11 +31,10 @@ local onHyperlinkClick = function (self, uri, ...)
     dialog.editBox:SetWidth(EDIT_BOX_WIDTH);
 end;
 
-for i = 1, _G.NUM_CHAT_WINDOWS do
-    local chatFrame = _G["ChatFrame" .. i];
+ChatSuey.OnChatFrameReady(function (chatFrame)
     hooks:RegisterFunc(chatFrame, "AddMessage", addMessage);
     hooks:RegisterScript(chatFrame, "OnHyperlinkClick", onHyperlinkClick);
-end
+end);
 
 _G.StaticPopupDialogs[DIALOG_NAME] = {
     text = LS["Copy the URL into your clipboard (Ctrl-C):"],

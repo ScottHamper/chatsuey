@@ -35,9 +35,8 @@ hooks:RegisterFunc(_G, "BNToastFrame_UpdateAnchor", function (forceAnchor)
     chatFrame.buttonFrame = originalButtonFrame;
 end);
 
-for i = 1, _G.NUM_CHAT_WINDOWS do
-    local frameName = "ChatFrame" .. i;
-    local chatFrame = _G[frameName];
+ChatSuey.OnChatFrameReady(function (chatFrame)
+    local frameName = chatFrame:GetName();
     local buttonFrame = _G[frameName .. "ButtonFrame"];
 
     hide(buttonFrame);
@@ -66,4 +65,4 @@ for i = 1, _G.NUM_CHAT_WINDOWS do
         "ChatSueyBottomFlashTemplate");
 
     _G[frameName .. "ButtonFrameBottomButtonFlash"] = flash;
-end
+end);

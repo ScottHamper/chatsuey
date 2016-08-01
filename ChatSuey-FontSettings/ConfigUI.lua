@@ -111,10 +111,10 @@ local initialize = function (frame, level)
     end
 end;
 
-for i = 1, _G.NUM_CHAT_WINDOWS do
-    local dropDown = _G["ChatFrame" .. i .. "TabDropDown"];
+ChatSuey.OnChatFrameReady(function (chatFrame)
+    local dropDown = _G[chatFrame:GetName() .. "TabDropDown"];
 
     hooks:RegisterFunc(dropDown, "initialize", function (level)
         initialize(dropDown, level);
     end);
-end
+end);

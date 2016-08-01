@@ -38,8 +38,7 @@ local onHyperlinkLeave = function (self, uri, link)
     _G.GameTooltip:Hide();
 end;
 
-for i = 1, _G.NUM_CHAT_WINDOWS do
-    local chatFrame = _G["ChatFrame" .. i];
+ChatSuey.OnChatFrameReady(function (chatFrame)
     hooks:RegisterScript(chatFrame, "OnHyperlinkEnter", onHyperlinkEnter);
     hooks:RegisterScript(chatFrame, "OnHyperlinkLeave", onHyperlinkLeave);
-end
+end);

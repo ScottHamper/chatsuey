@@ -3,6 +3,7 @@
 ## Author: Scott Hamper
 ## X-Website: http://www.scotthamper.com/chatsuey/
 ## Version: 1.1.0
+## Dependencies: ChatSuey
 ## DefaultState: disabled
 ## Notes: Removes the chat window buttons.
 

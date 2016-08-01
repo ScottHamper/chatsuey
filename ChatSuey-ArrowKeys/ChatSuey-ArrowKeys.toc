@@ -3,6 +3,7 @@
 ## Author: Scott Hamper
 ## X-Website: http://www.scotthamper.com/chatsuey/
 ## Version: 1.1.0
+## Dependencies: ChatSuey
 ## Notes: Enables the left/right arrow keys to move the text cursor when writing a chat message.
 
 Main.lua

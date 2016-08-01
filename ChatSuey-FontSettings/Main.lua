@@ -7,7 +7,6 @@ ChatSuey.SetFont = function (chatFrame)
     chatFrame:SetFont(config.path, size, config.outline);
 end;
 
-for i = 1, _G.NUM_CHAT_WINDOWS do
-    local chatFrame = _G["ChatFrame" .. i];
+ChatSuey.OnChatFrameReady(function (chatFrame)
     ChatSuey.SetFont(chatFrame);
-end
+end);

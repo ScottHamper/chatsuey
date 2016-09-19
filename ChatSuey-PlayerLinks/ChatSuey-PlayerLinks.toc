@@ -1,7 +1,7 @@
 ## Interface: 70000
 ## Title: ChatSuey - Player Links
 ## Author: Scott Hamper
-## X-Website: http://www.scotthamper.com/chatsuey/
+## X-Website: https://scott.software/chatsuey/
 ## Version: 1.1.0
 ## Dependencies: ChatSuey
 ## Notes: Alt-Click a player link to invite the player to your party.

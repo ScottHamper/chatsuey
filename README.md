@@ -1,7 +1,7 @@
 ChatSuey - Retail
 =================
 A port of ChatSuey for the current retail version of WoW (7.0).
-Learn about the vanilla version at the [project website](http://www.scotthamper.com/chatsuey/).
+Learn about the vanilla version at the [project website](https://scott.software/chatsuey/).
 
 Installation
 ------------

@@ -1,7 +1,7 @@
 ## Interface: 70000
 ## Title: ChatSuey - Remove Buttons
 ## Author: Scott Hamper
-## X-Website: http://www.scotthamper.com/chatsuey/
+## X-Website: https://scott.software/chatsuey/
 ## Version: 1.1.0
 ## Dependencies: ChatSuey
 ## DefaultState: disabled

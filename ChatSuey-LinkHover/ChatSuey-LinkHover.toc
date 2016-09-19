@@ -1,7 +1,7 @@
 ## Interface: 70000
 ## Title: ChatSuey - Link Hover
 ## Author: Scott Hamper
-## X-Website: http://www.scotthamper.com/chatsuey/
+## X-Website: https://scott.software/chatsuey/
 ## Version: 1.1.0
 ## Dependencies: ChatSuey
 ## Notes: Hovering the mouse cursor over a hyperlink will immediately display its tooltip, when relevant.

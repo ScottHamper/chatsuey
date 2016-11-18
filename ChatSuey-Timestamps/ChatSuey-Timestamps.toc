@@ -1,6 +1,7 @@
 ## Interface: 11200
 ## Title: ChatSuey - Timestamps
 ## Author: Scott Hamper
+## X-Website: https://scott.software/chatsuey/
 ## Version: 1.1.0
 ## Dependences: ChatSuey
 ## Notes: Adds timestamps to chat messages. Right-click a chat tab to configure settings.

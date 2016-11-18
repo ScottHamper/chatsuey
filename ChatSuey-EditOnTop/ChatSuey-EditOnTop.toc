@@ -1,7 +1,7 @@
 ## Interface: 11200
 ## Title: ChatSuey - Edit On Top
 ## Author: Scott Hamper
-## X-Website: http://www.scotthamper.com/chatsuey/
+## X-Website: https://scott.software/chatsuey/
 ## Version: 1.1.0
 ## DefaultState: disabled
 ## Notes: Moves the chat edit box above the chat window.

@@ -1,7 +1,7 @@
 ## Interface: 11200
 ## Title: ChatSuey - Arrow Keys
 ## Author: Scott Hamper
-## X-Website: http://www.scotthamper.com/chatsuey/
+## X-Website: https://scott.software/chatsuey/
 ## Version: 1.1.0
 ## Notes: Enables the left/right arrow keys to move the text cursor when writing a chat message.
 

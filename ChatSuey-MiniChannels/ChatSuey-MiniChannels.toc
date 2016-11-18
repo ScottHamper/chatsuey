@@ -1,6 +1,7 @@
 ## Interface: 11200
 ## Title: ChatSuey - Mini Channels
 ## Author: Scott Hamper
+## X-Website: https://scott.software/chatsuey/
 ## Version: 1.1.0
 ## Dependencies: ChatSuey
 ## OptionalDeps: ChatSuey-Timestamps, ChatSuey-ChannelLinks

@@ -1,6 +1,7 @@
 local _G = getfenv();
 local ChatSuey = _G.ChatSuey;
 local hooks = ChatSuey.HookTable:new();
+local LS = ChatSuey.Locales[_G.GetLocale()].Strings;
 
 local DIALOG_NAME = "ChatSuey_WebLinkDialog";
 local URL_PATTERN = "(|?%a[%w+.%-]-://[%w%-._~:/?#%[%]@!$&'()*+,;=%%]+)";
@@ -48,7 +49,7 @@ for i = 1, _G.NUM_CHAT_WINDOWS do
 end
 
 _G.StaticPopupDialogs[DIALOG_NAME] = {
-    text = "Copy the URL into your clipboard (Ctrl-C):",
+    text = LS["Copy the URL into your clipboard (Ctrl-C):"],
     button1 = _G.CLOSE,
     timeout = 0,
     whileDead = true,

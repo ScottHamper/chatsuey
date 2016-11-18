@@ -15,6 +15,9 @@ Localizations greatly appreciated
 If you're multi-lingual, I could really use your help! I'm only fluent in English, but the following addons could be localized for other languages:
 
 - `ChatSuey`
+- `ChatSuey-FontSettings`
+- `ChatSuey-MiniChannels`
 - `ChatSuey-Timestamps`
+- `ChatSuey-WebLinks`
 
 If you'd be willing to help out, take a look at each addon's `i18n\enUS.lua` file to see what needs translating, and let me know by [opening an issue on GitHub](https://github.com/ScottHamper/ChatSuey/issues).

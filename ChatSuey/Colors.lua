@@ -33,10 +33,10 @@ ChatSuey.Colors = {
     HEIRLOOM = "ffe6cc80",
     TOKEN = "ff00ccff",
     BLIZZARD = "ff00ccff",
-    
+
     -- WoW Class Colors
     DEATHKNIGHT = "ffc41f3b",
-    DEMONHUNTER = "ff4dd827",
+    DEMONHUNTER = "ffa330c9",
     DRUID = "ffff7d0a",
     HUNTER = "ffabd473",
     MAGE = "ff69ccf0",

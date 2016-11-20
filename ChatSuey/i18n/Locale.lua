@@ -1,21 +1,17 @@
 local _G = getfenv();
 local ChatSuey = _G.ChatSuey;
 
-local Locale = {
-    Strings = {},
-};
-
-setmetatable(Locale.Strings, {
-    __index = function (self, str)
-        return str;
-    end,
-});
+local Locale = {};
 
 function Locale:new()
-    local locale = {};
+    local locale = {
+        Strings = {},
+    };
 
-    setmetatable(locale, {
-        __index = self,
+    setmetatable(locale.Strings, {
+        __index = function (self, str)
+            return str;
+        end,
     });
 
     return locale;

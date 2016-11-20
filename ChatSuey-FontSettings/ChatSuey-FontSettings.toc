@@ -6,6 +6,9 @@
 ## Dependencies: ChatSuey
 ## Notes: Right-click a chat tab to adjust font settings, such as applying an outline.
 
+
+i18n\frFR.lua
+i18n\zhCN.lua
 i18n\enUS.lua
 
 Fonts.lua

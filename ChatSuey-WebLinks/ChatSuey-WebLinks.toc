@@ -6,6 +6,8 @@
 ## Dependencies: ChatSuey
 ## Notes: Automatically converts URLs with "://" into hyperlinks. Clicking them brings up a box to easily copy the URL into your clipboard. Enter/Escape keys can close the box.
 
+i18n\frFR.lua
+i18n\zhCN.lua
 i18n\enUS.lua
 
 Main.lua

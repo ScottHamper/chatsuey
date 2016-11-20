@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>ChatSuey - Chat Enhancement for Vanilla WoW</title>
+    <meta name="description" content="ChatSuey is a collection of small chat enhancement addons for World of Warcraft 1.12.1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <header class="jumbotron">
+      <h1 class="jumbotron__header">ChatSuey</h1>
+      <div class="jumbotron__sub-header">A collection of chat enhancement addons for vanilla World of Warcraft (WoW 1.12)</div>
+
+      <div class="call-to-action">
+        <a href="https://github.com/ScottHamper/ChatSuey/releases/download/1.1.0/ChatSuey-1.1.0.zip" rel="nofollow" class="button button--primary">Download</a>
+        <span class="call-to-action__sub-text">Version 1.1.0</span>
+      </div>
+
+      <div class="call-to-action">
+        <a href="https://github.com/ScottHamper/ChatSuey" rel="nofollow" class="button">Collaborate</a>
+        <span class="call-to-action__sub-text">on GitHub</span>
+      </div>
+    </header>
+
+    <section class="content-section">
+      <h2 class="content-section__header">Addons in the Collection</h2>
+
+      <div class="content-section__body features">
+        <div class="feature">
+          <h3 class="feature__header">Mouse Wheel Scrolling</h3>
+          <p>
+            Hold <span class="keyboard-key keyboard-key--shift">shift</span> to scroll five lines at a time.<br />
+            Hold <span class="keyboard-key">ctrl</span> to scroll to the top or bottom.
+          </p>
+        </div>
+
+        <div class="feature">
+          <h3 class="feature__header">Copy Web URLs Easily</h3>
+          <p>
+            URLs containing <code>://</code> are automatically turned into links
+            you can click to quickly copy into your clipboard.
+          </p>
+        </div>
+
+        <div class="feature">
+          <h3 class="feature__header">Enhanced Player Links</h3>
+          <p>
+            <span class="keyboard-key">Alt</span> click invites the player to your party.<br />
+            <span class="keyboard-key keyboard-key--shift">Shift</span> click links the player when typing.<br />
+            <span class="keyboard-key">Ctrl</span> click targets the player.<br />
+          </p>
+        </div>
+
+        <div class="feature">
+          <h3 class="feature__header">Sticky Chat</h3>
+          <p>
+            Remain on whispers, officer chat, and channel chats until you change
+            where you want messages sent, just like how say/party/guild chats work by
+            default.
+          </p>
+        </div>
+
+        <div class="feature">
+          <h3 class="feature__header">Timestamps</h3>
+          <p>
+            Adds timestamps next to each message. Right-click a chat window tab to
+            configure settings, just like other window settings.
+          </p>
+        </div>
+
+        <div class="feature">
+          <h3 class="feature__header">Item Link Tooltips on Hover</h3>
+          <p>
+            Respects your default tooltip anchor, so plays well with addons like TinyTip.
+          </p>
+        </div>
+
+        <div class="feature">
+          <h3 class="feature__header">Markdown Links</h3>
+          <p>
+            Create arbitrary hyperlinks as you type using a Markdown-ish syntax.
+            <a href="#markdown">Learn more</a>
+          </p>
+        </div>
+
+        <div class="feature">
+          <h3 class="feature__header">Move Cursor With Arrow Keys</h3>
+          <p>
+            When typing, move the text cursor using the left/right arrow keys instead of rotating your character.
+          </p>
+        </div>
+
+        <div class="feature">
+          <h3 class="feature__header">Edit Box Above Chat</h3>
+          <p>
+            For those (like me) who shove their chat window to the bottom of the screen.
+            <span class="disabled-addon-note">Disabled by default</span>
+          </p>
+        </div>
+
+        <div class="feature">
+          <h3 class="feature__header">Remove Chat Buttons</h3>
+          <p>
+            Gets rid of the chat buttons, but keeps a flashing indicator when the chat
+            window isn't scrolled all the way down.
+            <span class="disabled-addon-note">Disabled by default</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="content-section__header">Installation</h2>
+      <div class="content-section__body">
+        <ol>
+          <li>Copy all the ChatSuey folders into your <code>Interface\AddOns</code> directory.</li>
+          <li>If WoW is currently running, exit completely out and restart it.</li>
+          <li>Enable/disable desired addons at the character select screen.</li>
+        </ol>
+      </div>
+
+      <p class="content-sub-section">
+        <strong>NOTE</strong>: If you're upgrading from an earlier version, delete all the ChatSuey
+        folders from your <code>Interface\AddOns</code> directory before copying the
+        new ones over.
+      </p>
+    </section>
+
+    <section class="content-section" id="markdown">
+      <h2 class="content-section__header">Using Markdown Links</h2>
+      <div class="content-sub-section">
+        <h3 class="content-sub-section__header">What is Markdown?</h3>
+        <p>
+          The goal of <a href="https://daringfireball.net/projects/markdown/basics" target="_blank" rel="nofollow">Markdown</a> is to provide a way of writing plain text
+          that is easily read and understood by people, while also making
+          it easy for software to convert into a richly formatted document
+          (usually HTML).
+        </p>
+        <p>
+          If that sounds complicated - don't worry! ChatSuey only borrows
+          Markdown's hyperlink syntax:
+        </p>
+        <div class="markdown-example">
+          <div><code>[Google](https://www.google.com)</code></div>
+          <div>&#x2193;</div>
+          <div><a href="https://www.google.com" target="_blank" rel="nofollow">Google</a></div>
+        </div>
+      </div>
+
+      <div class="content-sub-section">
+        <h3 class="content-sub-section__header">Markdown Links in WoW</h3>
+        <p>
+          In vanilla WoW, the two main types of links you can create are item links
+          and player links. Here's an example of both using Markdown:
+        </p>
+        <div class="markdown-example markdown-example--list">
+          <ul>
+            <li><code>[Linen Cloth](item:2589)</code></li>
+            <li><code>[Scott Hamper](player:Chatsuey)</code></li>
+          </ul>
+        </div>
+        <p>
+          You can find IDs for items at
+          <a href="http://db.vanillagaming.org" target="_blank" rel="nofollow">db.vanillagaming.org</a>
+          - just look at the <code>?item=</code> part of an item page's URL.
+        <p>
+          ChatSuey differs from traditional Markdown in that you can optionally
+          specify a color for the link inside a set of curly braces at the end:
+        </p>
+        <pre class="markdown-example"><code>[Did Somebody Say...](item:19019){legendary}</code></pre>
+        <p>
+          If you're familiar with hexidecimal, you can also specify a color in an ARGB
+          format. For example, <code>{ffff8000}</code> is equivalent to <code>{legendary}</code>.
+        </p>
+      </div>
+
+      <div class="content-sub-section">
+        <h3 class="content-sub-section__header">Complete Color List</h3>
+        <div class="color-tables">
+          <table class="color-table">
+            <tr>
+              <td class="color-table__preview" style="background-color: #000;"></td>
+              <td class="color-table__name">Black</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #808080;"></td>
+              <td class="color-table__name">Gray</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #c0c0c0;"></td>
+              <td class="color-table__name">Silver</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #fff;"></td>
+              <td class="color-table__name">White</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #800080;"></td>
+              <td class="color-table__name">Purple</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #800000;"></td>
+              <td class="color-table__name">Maroon</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #f00;"></td>
+              <td class="color-table__name">Red</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #f0f;"></td>
+              <td class="color-table__name">Fuchsia</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #008000;"></td>
+              <td class="color-table__name">Green</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #0f0;"></td>
+              <td class="color-table__name">Lime</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #808000;"></td>
+              <td class="color-table__name">Olive</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #ff0;"></td>
+              <td class="color-table__name">Yellow</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #000080;"></td>
+              <td class="color-table__name">Navy</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #00f;"></td>
+              <td class="color-table__name">Blue</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #008080;"></td>
+              <td class="color-table__name">Teal</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #0ff;"></td>
+              <td class="color-table__name">Aqua</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #ffa500;"></td>
+              <td class="color-table__name">Orange</td>
+            </tr>
+          </table>
+
+          <table class="color-table">
+            <tr>
+              <td class="color-table__preview" style="background-color: #9d9d9d;"></td>
+              <td class="color-table__name">Poor</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #fff;"></td>
+              <td class="color-table__name">Common</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #1eff00;"></td>
+              <td class="color-table__name">Uncommon</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #0070dd;"></td>
+              <td class="color-table__name">Rare</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #a335ee;"></td>
+              <td class="color-table__name">Epic</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #ff8000;"></td>
+              <td class="color-table__name">Legendary</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #e6cc80;"></td>
+              <td class="color-table__name">Artifact</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #e6cc80;"></td>
+              <td class="color-table__name">Heirloom</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #0cf;"></td>
+              <td class="color-table__name">Token</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #0cf;"></td>
+              <td class="color-table__name">Blizzard</td>
+            <tr>
+              <td class="color-table__preview" style="background-color: #71d5ff;"></td>
+              <td class="color-table__name">Spell</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #ffd000;"></td>
+              <td class="color-table__name">Skill</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #4e96f7;"></td>
+              <td class="color-table__name">Talent</td>
+            </tr>
+          </table>
+
+          <table class="color-table">
+            <tr>
+              <td class="color-table__preview" style="background-color: #c41f3b;"></td>
+              <td class="color-table__name">DeathKnight</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #4dd827;"></td>
+              <td class="color-table__name">DemonHunter</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #ff7d0a;"></td>
+              <td class="color-table__name">Druid</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #abd473;"></td>
+              <td class="color-table__name">Hunter</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #69ccf0;"></td>
+              <td class="color-table__name">Mage</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #00ff96;"></td>
+              <td class="color-table__name">Monk</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #f58cba;"></td>
+              <td class="color-table__name">Paladin</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #ffffff;"></td>
+              <td class="color-table__name">Priest</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #fff569;"></td>
+              <td class="color-table__name">Rogue</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #0070de;"></td>
+              <td class="color-table__name">Shaman</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #9482c9;"></td>
+              <td class="color-table__name">Warlock</td>
+            </tr>
+            <tr>
+              <td class="color-table__preview" style="background-color: #c79c6e;"></td>
+              <td class="color-table__name">Warrior</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      <div class="scott-photo">
+        <a href="../">
+          <img src="../images/scott.png" alt="Scott Hamper" />
+        </a>
+      </div>
+
+      <a href="../" class="logo">
+        <img src="../images/logo.png" alt="Scott Hamper's Logo" />
+      </a>
+    </footer>
+  </body>
+</html>

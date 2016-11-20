@@ -1,0 +1,314 @@
+@font-face {
+  font-family: "Hind Vadodara";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Hind Vadodara"),
+       local("HindVadodara-Regular"),
+       url("../fonts/HindVadodara-Regular.woff2") format("woff2"),
+       url("../fonts/HindVadodara-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Hind Vadodara";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Hind Vadodara Bold"),
+       local("HindVadodara-Bold"),
+       url("../fonts/HindVadodara-Bold.woff2") format("woff2"),
+       url("../fonts/HindVadodara-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "Inconsolata";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Inconsolata"),
+       url("../fonts/Inconsolata-Regular.woff2") format("woff2"),
+       url("../fonts/Inconsolata-Regular.woff") format("woff");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Hind Vadodara", sans-serif;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+a {
+  color: #1B97E6;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p {
+  margin: 1rem 0;
+}
+
+.jumbotron {
+  text-align: center;
+  padding: 0 2rem 3.5rem;
+  font-size: 1.5rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.jumbotron__header {
+  font-size: 8rem;
+  margin: 2rem 0;
+}
+
+.jumbotron__sub-header {
+  margin: 2rem 0 3.5rem;
+}
+
+.call-to-action {
+  display: inline-block;
+  margin: .5rem;
+}
+
+.call-to-action__sub-text {
+  font-size: 1rem;
+  color: #777;
+}
+
+.button {
+  color: #444;
+  display: block;
+  text-decoration: none;
+  border: 1px solid #2083A4;
+  border-radius: .5rem;
+  padding: .75rem 3rem;
+  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, .5),
+              inset -1px -1px 1px rgba(0, 0, 0, .25);
+  text-shadow: -1px -1px rgba(0, 0, 0, .35);
+  background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, .1));
+  color: #fff;
+  background-color: #16C2DE;
+  background-repeat: no-repeat;
+  transition: all .15s linear;
+}
+
+.button:hover {
+  text-decoration: none;
+  background-position: 0 2rem;
+  background-color: #16CEDE;
+  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, .5),
+              inset -1px -1px 1px rgba(0, 0, 0, .25),
+              0 .6rem .75rem -.375rem rgba(22, 206, 222, .4);
+}
+
+.button--primary {
+  background-color: #1c1;
+  border-color: #484;
+}
+
+.button--primary:hover {
+  background-color: #22d022;
+  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, .5),
+              inset -1px -1px 1px rgba(0, 0, 0, .25),
+              0 .6rem .75rem -.375rem rgba(34, 208, 34, .4);
+}
+
+.content-section {
+  padding: 3rem 2rem 3.5rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.content-section__header {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.content-section__body {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.content-sub-section {
+  max-width: 40rem;
+  margin: 2rem auto 4rem;
+}
+
+.content-sub-section:last-child {
+  margin-bottom: 0;
+}
+
+.content-sub-section__header {
+  text-align: center;
+  font-size: 1.375rem;
+}
+
+.features {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.feature {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 33%;
+  padding: 0 1.5rem;
+  margin: 2rem 0 1rem;
+}
+
+.feature__header {
+  text-align: center;
+  margin: .5rem 0;
+}
+
+.keyboard-key,
+.disabled-addon-note,
+code {
+  border-radius: .25rem;
+  border: 1px solid;
+  display: inline-block;
+}
+
+.keyboard-key {
+  border-color: #444;
+  text-transform: uppercase;
+  padding: 0 .5rem;
+  font-size: .8rem;
+}
+
+.keyboard-key--shift:before {
+  content: '\2b06';
+  margin-right: .3rem;
+}
+
+code {
+  font-family: "Inconsolata", monospace;
+  border-color: #ddd;
+  padding: .2rem .3rem;
+  background-color: #fafafa;
+}
+
+.disabled-addon-note {
+  font-family: "Inconsolata", monospace;
+  border-color: #ebb;
+  padding: .2rem .3rem;
+  background-color: #fffcfc;
+}
+
+li {
+  margin: .5rem 0;
+}
+
+.markdown-example {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.markdown-example--list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  text-align: left;
+}
+
+.color-table {
+  font-family: "Inconsolata", monospace;
+  display: inline-block;
+  text-transform: lowercase;
+  vertical-align: top;
+  margin: 1rem .5rem;
+}
+
+td {
+  border-bottom: 1px solid #ddd;
+}
+
+table tr:first-child td {
+  border-top: 1px solid #ddd;
+}
+
+.color-tables {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.color-table__preview {
+  width: 2rem;
+}
+
+.color-table__name {
+  padding: .25rem 2rem .25rem .5rem;
+}
+
+.page-footer {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.scott-photo {
+  margin-top: 3rem;
+}
+
+.logo {
+  display: inline-block;
+  margin: 1rem 0;
+}
+
+@media (max-width: 74rem) {
+  .features {
+    max-width: 50rem;
+  }
+
+  .feature {
+    width: 50%;
+  }
+}
+
+@media (max-width: 52rem) {
+  .feature {
+    width: 100%;
+  }
+
+  .features {
+    max-width: 24rem;
+  }
+}
+
+@media (max-width: 38rem) {
+  .jumbotron__header {
+    font-size: 6rem;
+  }
+
+  .jumbotron {
+    font-size: 1.3rem;
+  }
+
+  .content-section__header {
+    font-size: 2rem;
+  }
+
+  .feature {
+    margin: 1rem 0;
+  }
+
+  .color-tables {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 28rem) {
+  body {
+    font-size: 1rem;
+  }
+
+  .jumbotron__header {
+    font-size: 4.5rem;
+  }
+
+  .jumbotron__sub-header {
+    font-size: 1.1rem;
+  }
+}

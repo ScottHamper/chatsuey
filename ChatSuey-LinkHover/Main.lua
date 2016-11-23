@@ -26,14 +26,8 @@ local onHyperlinkEnter = function (self, uri, link)
     _G.GameTooltip:Show();
 end;
 
-local onHyperlinkLeave = function (self, uri, link)
-    hooks[self].OnHyperlinkLeave(self, uri, link);
-
-    local scheme = ChatSuey.UriComponents(uri);
-
-    if not TOOLTIP_SCHEMES[scheme] then
-        return;
-    end
+local onHyperlinkLeave = function (self)
+    hooks[self].OnHyperlinkLeave(self);
 
     _G.GameTooltip:Hide();
 end;

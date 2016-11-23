@@ -14,7 +14,7 @@ local hide = function (frame)
     end);
 end;
 
-hide(_G.FriendsMicroButton);
+hide(_G.QuickJoinToastButton);
 hide(_G.ChatFrameMenuButton);
 
 -- Battle.net toasts are anchored flush with the edge of the chat frame's

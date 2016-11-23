@@ -1,14 +1,6 @@
 local ChatSuey = _G.ChatSuey;
 
-local LocaleTable = {
-    DEFAULT = ChatSuey.Locale:new(),
-};
-
-setmetatable(LocaleTable, {
-    __index = function (self, key)
-        return self.DEFAULT;
-    end,
-});
+local LocaleTable = {};
 
 function LocaleTable:new(defaultLocale)
     local localeTable = {
@@ -16,7 +8,9 @@ function LocaleTable:new(defaultLocale)
     };
 
     setmetatable(localeTable, {
-        __index = self,
+        __index = function (self, key)
+            return self.DEFAULT;
+        end,
     });
 
     return localeTable;

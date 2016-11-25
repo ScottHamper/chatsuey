@@ -11,7 +11,7 @@ local uiDropDownMenu_AddButton = function (info, level)
     level = level or 1;
 
     local dropDown = _G["DropDownList" .. level];
-    local index = dropDown.numButtons + 1;
+    local index = dropDown.numButtons;
 
     buttonInfo[level] = buttonInfo[level] or {};
     buttonInfo[level][index] = {};
@@ -23,20 +23,17 @@ local uiDropDownMenu_AddButton = function (info, level)
     for key, value in pairs(info) do
         buttonInfo[level][index][key] = value;
     end
-
-    hooks[_G].UIDropDownMenu_AddButton(info, level);
 end;
 
-hooks:RegisterFunc(_G, "UIDropDownMenu_AddButton", uiDropDownMenu_AddButton);
+_G.hooksecurefunc("UIDropDownMenu_AddButton", uiDropDownMenu_AddButton);
 
 -- The default `Initialize` hides all buttons and sets `numButtons` back to 0,
 -- so we'll also use the opportunity to reset our `buttonInfo` cache.
 local uiDropDownMenu_Initialize = function (frame, initFunction, displayMode, level)
     buttonInfo = {};
-    hooks[_G].UIDropDownMenu_Initialize(frame, initFunction, displayMode, level);
 end;
 
-hooks:RegisterFunc(_G, "UIDropDownMenu_Initialize", uiDropDownMenu_Initialize);
+_G.hooksecurefunc("UIDropDownMenu_Initialize", uiDropDownMenu_Initialize);
 
 ChatSuey.UIDropDownMenu_AddButton = function (info, level, index)
     level = level or 1;

@@ -3,6 +3,7 @@
 ## Author: Scott Hamper
 ## X-Website: https://scott.software/chatsuey/
 ## Version: 1.1.0
+## OptionalDeps: Auctioneer
 ## SavedVariables: ChatSueyDB
 ## Notes: Utility library for ChatSuey addons. Useless by itself.
 

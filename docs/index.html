@@ -15,8 +15,8 @@
       <div class="jumbotron__sub-header">A collection of chat enhancement addons for vanilla World of Warcraft (WoW 1.12)</div>
 
       <div class="call-to-action">
-        <a href="https://github.com/ScottHamper/ChatSuey/releases/download/1.1.0/ChatSuey-1.1.0.zip" rel="nofollow" class="button button--primary">Download</a>
-        <span class="call-to-action__sub-text">Version 1.1.0</span>
+        <a href="https://github.com/ScottHamper/ChatSuey/releases/download/1.2.0/ChatSuey-1.2.0.zip" rel="nofollow" class="button button--primary">Download</a>
+        <span class="call-to-action__sub-text">Version 1.2.0</span>
       </div>
 
       <div class="call-to-action">
@@ -32,6 +32,7 @@
         <div class="feature">
           <h3 class="feature__header">Mouse Wheel Scrolling</h3>
           <p>
+            Scrolls one line at a time by default.<br />
             Hold <span class="keyboard-key keyboard-key--shift">shift</span> to scroll five lines at a time.<br />
             Hold <span class="keyboard-key">ctrl</span> to scroll to the top or bottom.
           </p>
@@ -42,15 +43,6 @@
           <p>
             URLs containing <code>://</code> are automatically turned into links
             you can click to quickly copy into your clipboard.
-          </p>
-        </div>
-
-        <div class="feature">
-          <h3 class="feature__header">Enhanced Player Links</h3>
-          <p>
-            <span class="keyboard-key">Alt</span> click invites the player to your party.<br />
-            <span class="keyboard-key keyboard-key--shift">Shift</span> click links the player when typing.<br />
-            <span class="keyboard-key">Ctrl</span> click targets the player.<br />
           </p>
         </div>
 
@@ -74,7 +66,39 @@
         <div class="feature">
           <h3 class="feature__header">Item Link Tooltips on Hover</h3>
           <p>
-            Respects your default tooltip anchor, so plays well with addons like TinyTip.
+            Respects your default tooltip anchor, so plays nice with addons like TinyTip.
+          </p>
+        </div>
+
+        <div class="feature">
+          <h3 class="feature__header">Enhanced Player Links</h3>
+          <p>
+            <span class="keyboard-key">Alt</span> click invites the player to your party.<br />
+            <span class="keyboard-key keyboard-key--shift">Shift</span> click links the player when typing.<br />
+            <span class="keyboard-key">Ctrl</span> click targets the player.<br />
+          </p>
+        </div>
+        
+        <div class="feature">
+          <h3 class="feature__header">Character Mentions</h3>
+          <p>
+            Plays the whisper ping sound and highlights your character's name when it appears in a chat message.
+          </p>
+        </div>
+        
+        <div class="feature">
+          <h3 class="feature__header">Mini Channel Headers</h3>
+          <p>
+            Abbreviates channel headers. E.g., <code>[Party]</code> becomes <code>[P]</code> and
+            <code>[1. General]</code> becomes <code>[1]</code>.
+          </p>
+        </div>
+        
+        <div class="feature">
+          <h3 class="feature__header">Extra Font Settings</h3>
+          <p>
+            Right-click a chat tab to adjust font settings, such as applying an outline
+            or selecting which font family to use.
           </p>
         </div>
 
@@ -83,6 +107,13 @@
           <p>
             Create arbitrary hyperlinks as you type using a Markdown-ish syntax.
             <a href="#markdown">Learn more</a>
+          </p>
+        </div>
+        
+        <div class="feature">
+          <h3 class="feature__header">Channel Header Links</h3>
+          <p>
+            Turns channel headers into links. Click a header to open a chat box for that channel.
           </p>
         </div>
 
@@ -170,7 +201,11 @@
           ChatSuey differs from traditional Markdown in that you can optionally
           specify a color for the link inside a set of curly braces at the end:
         </p>
-        <pre class="markdown-example"><code>[Did Somebody Say...](item:19019){legendary}</code></pre>
+        <div class="markdown-example">
+          <div><code>[Did Somebody Say...](item:19019){legendary}</code></div>
+          <div>&#x2193;</div>
+          <div><img src="images/did-somebody-say.png" alt="Did Somebody Say..." /></div>
+        </div>
         <p>
           If you're familiar with hexidecimal, you can also specify a color in an ARGB
           format. For example, <code>{ffff8000}</code> is equivalent to <code>{legendary}</code>.

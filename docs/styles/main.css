@@ -7,6 +7,7 @@
        url("../fonts/HindVadodara-Regular.woff2") format("woff2"),
        url("../fonts/HindVadodara-Regular.woff") format("woff");
 }
+
 @font-face {
   font-family: "Hind Vadodara";
   font-style: normal;
@@ -16,6 +17,7 @@
        url("../fonts/HindVadodara-Bold.woff2") format("woff2"),
        url("../fonts/HindVadodara-Bold.woff") format("woff");
 }
+
 @font-face {
   font-family: "Inconsolata";
   font-style: normal;
@@ -190,10 +192,16 @@ code {
 }
 
 .disabled-addon-note {
+  background-color: #c41f3b;
+  border: none;
+  color: #fff;
   font-family: "Inconsolata", monospace;
-  border-color: #ebb;
-  padding: .2rem .3rem;
-  background-color: #fffcfc;
+  font-size: .9rem;
+  font-weight: normal;
+  padding: .2rem .4rem;
+  text-shadow: -1px -1px 0px #0002,
+               1px 1px 0px #fff4;
+  text-transform: uppercase;
 }
 
 li {

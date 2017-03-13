@@ -6,7 +6,7 @@ local LS = ChatSuey.Locales["enUS"].Strings;
 
 LS["P"] = "P";   -- Party
 LS["R"] = "R";   -- Raid
-LS["G"] = "G";   -- Group
+LS["G"] = "G";   -- Guild
 LS["O"] = "O";   -- Officer
 LS["RL"] = "RL"; -- Raid Leader
 LS["RW"] = "RW"; -- Raid Warning

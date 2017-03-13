@@ -2,7 +2,7 @@
 
 LS["P"] = "GR";     -- Party (Groupe)
 LS["R"] = "R";      -- Raid
-LS["G"] = "G";      -- Group (Guild)
+LS["G"] = "G";      -- Guild
 LS["O"] = "O";      -- Officer
 LS["RL"] = "CR";    -- Raid Leader (Chef de Raid)
 LS["RW"] = "AR";    -- Raid Warning (Avertissement de Raid)

@@ -10,9 +10,17 @@ Installation
 
 NOTE: If you're upgrading from an earlier version, delete all the ChatSuey folders from your `Interface\AddOns` directory before copying the new ones over.
 
-Localizations greatly appreciated
----------------------------------
-If you're multi-lingual, I could really use your help! I'm only fluent in English, but the following addons could be localized for other languages:
+Localizations
+-------------
+ChatSuey is currently localized for the following languages/game clients:
+
+- English (enUS)
+- French (frFR)
+- Simplified Chinese (zhCN)
+
+**HUGE THANK YOU** to [@eloib](https://github.com/eloib) for providing the French/Simplified Chinese translations!
+
+If you're multi-lingual and would be willing to contribute another localization for ChatSuey, I would greatly appreciate your help! The following addons have text that needs to be translated:
 
 - `ChatSuey`
 - `ChatSuey-FontSettings`
@@ -20,4 +28,4 @@ If you're multi-lingual, I could really use your help! I'm only fluent in Englis
 - `ChatSuey-Timestamps`
 - `ChatSuey-WebLinks`
 
-If you'd be willing to help out, take a look at each addon's `i18n\enUS.lua` file to see what needs translating, and let me know by [opening an issue on GitHub](https://github.com/ScottHamper/ChatSuey/issues).
+Let me know you're interested by [opening an issue or pull request on GitHub](https://github.com/ScottHamper/ChatSuey), and take a look at each addon's `i18n\enUS.lua` file to get a sense of what translations are needed.

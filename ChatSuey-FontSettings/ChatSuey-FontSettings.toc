@@ -1,4 +1,4 @@
-## Interface: 70100
+## Interface: 70300
 ## Title: ChatSuey - Font Settings
 ## Author: Scott Hamper
 ## X-Website: https://scott.software/chatsuey/

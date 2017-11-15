@@ -52,7 +52,7 @@ local onEvent = function (self, event, message, sender, ...)
     local message, count = message:gsub(HIGHLIGHT_PATTERN, highlight);
 
     if count > 0 then
-        _G.PlaySound("TellMessage", "SFX");
+        _G.PlaySound(SOUNDKIT.TELL_MESSAGE);
     end
 
     hooks[self].OnEvent(self, event, message, sender, ...);

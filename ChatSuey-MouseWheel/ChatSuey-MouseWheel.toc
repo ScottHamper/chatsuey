@@ -1,4 +1,4 @@
-## Interface: 70300
+## Interface: 80000
 ## Title: ChatSuey - Mouse Wheel
 ## Author: Scott Hamper
 ## X-Website: https://scott.software/chatsuey/

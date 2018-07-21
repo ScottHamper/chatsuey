@@ -7,5 +7,4 @@
 ## DefaultState: disabled
 ## Notes: Removes the chat window buttons.
 
-BottomFlashTemplate.xml
 Main.lua

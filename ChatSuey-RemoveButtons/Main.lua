@@ -5,17 +5,16 @@ local CHAT_FRAME_MARGIN = 4;
 local hide = function (frame)
     frame:Hide();
 
-    -- Makes sure that things can never be shown in the future.
-    -- For example, the "MenuButton" normally re-shows when
-    -- changing the active chat tab.
-    hooks:RegisterScript(frame, "OnShow", function ()
-        hooks[this].OnShow();
-        this:Hide();
+    -- Makes sure that the frame can never be shown again in the future.
+    hooks:RegisterScript(frame, "OnShow", function (self)
+        hooks[self].OnShow();
+        self:Hide();
     end);
 end;
 
 hide(_G.QuickJoinToastButton);
 hide(_G.ChatFrameMenuButton);
+hide(_G.ChatFrameChannelButton);
 
 -- Battle.net toasts are anchored flush with the edge of the chat frame's
 -- buttons by default. Since we've removed the buttons, we want toasts to
@@ -50,19 +49,4 @@ ChatSuey.OnChatFrameReady(function (chatFrame)
     local bottom = -_G[frameName .. "EditBox"]:GetHeight();
 
     chatFrame:SetClampRectInsets(left, right, top, bottom);
-
-    -- By hiding the "BottomButton", we lose a flashing indicator
-    -- when the chat frame is not scrolled all the way down.
-    -- That sucks.
-    -- So we add our own indicator and reuse Blizzard's original
-    -- flash implementation by overriding the "BottomButtonFlash"
-    -- global variable with our new frame.
-    -- Prob not the safest approach, but very effective.
-    local flash = _G.CreateFrame(
-        "Frame",
-        frameName .. "ChatSueyBottomFlash",
-        chatFrame,
-        "ChatSueyBottomFlashTemplate");
-
-    _G[frameName .. "ButtonFrameBottomButtonFlash"] = flash;
 end);

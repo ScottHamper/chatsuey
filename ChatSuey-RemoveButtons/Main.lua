@@ -49,4 +49,13 @@ ChatSuey.OnChatFrameReady(function (chatFrame)
     local bottom = -_G[frameName .. "EditBox"]:GetHeight();
 
     chatFrame:SetClampRectInsets(left, right, top, bottom);
+    
+    -- Starting in 8.0, newly created temporary chat frames (e.g., whisper frames)
+    -- cannot be positioned outside of their ClampRectInsets. As a result, we need
+    -- to reanchor the frame now that we've updated its ClampRectInsets, in case the
+    -- primary frame of the GENERAL_CHAT_DOCK is positioned outside the default insets.
+    local dock = _G.GENERAL_CHAT_DOCK;
+    if chatFrame.isDocked and chatFrame ~= dock.primary then
+        chatFrame:SetAllPoints(dock.primary);
+    end
 end);

@@ -1,6 +1,6 @@
 local hooks = _G.ChatSuey.HookTable:new();
 
-local CHAT_FRAME_MARGIN = 4;
+local CHAT_FRAME_MARGIN = 2;
 
 local hide = function (frame)
     frame:Hide();
@@ -43,13 +43,20 @@ ChatSuey.OnChatFrameReady(function (chatFrame)
     -- Now that the button frame is gone, we want to allow the
     -- chat frame to move closer to the edge of the screen.
     -- While we're at it, we'll let it move more vertically, too.
-    local left = -CHAT_FRAME_MARGIN;
-    local right = CHAT_FRAME_MARGIN;
+    local _, _, _, leftOffset = chatFrame.Background:GetPoint(1); -- TOPLEFT
+    local _, _, _, rightOffset = chatFrame.Background:GetPoint(2); -- TOPRIGHT
+    local left = leftOffset - CHAT_FRAME_MARGIN;
+    local right = rightOffset + CHAT_FRAME_MARGIN;
     local top = _G[frameName .. "Tab"]:GetHeight();
-    local bottom = -_G[frameName .. "EditBox"]:GetHeight();
+    local bottom = -_G[frameName .. "EditBox"]:GetHeight() - CHAT_FRAME_MARGIN;
 
     chatFrame:SetClampRectInsets(left, right, top, bottom);
-    
+
+    -- Now that we've updated the ClampRectInsets, we don't ever want the
+    -- Blizzard UI to reset them back to default values. This was mainly
+    -- an issue with ChatFrame2 (the combat log).
+    hooks:RegisterFunc(chatFrame, "SetClampRectInsets", function () end);
+
     -- Starting in 8.0, newly created temporary chat frames (e.g., whisper frames)
     -- cannot be positioned outside of their ClampRectInsets. As a result, we need
     -- to reanchor the frame now that we've updated its ClampRectInsets, in case the

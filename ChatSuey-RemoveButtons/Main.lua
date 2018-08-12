@@ -16,23 +16,10 @@ hide(_G.QuickJoinToastButton);
 hide(_G.ChatFrameMenuButton);
 hide(_G.ChatFrameChannelButton);
 
--- Battle.net toasts are anchored flush with the edge of the chat frame's
--- buttons by default. Since we've removed the buttons, we want toasts to
+-- Battle.net toasts are anchored flush with the edge of the DEFAULT_CHAT_FRAME
+-- ButtonFrame by default. Since we've removed the buttons, we want toasts to
 -- be flush with the chat frame instead.
-hooks:RegisterFunc(_G, "BNToastFrame_UpdateAnchor", function (forceAnchor)
-    local chatFrame = _G.DEFAULT_CHAT_FRAME;
-    local originalButtonFrame = chatFrame.buttonFrame;
-
-    -- Instead of re-implementing the entirety of Blizzard's
-    -- BNToastFrame_UpdateAnchor just to change a line or two,
-    -- we'll temporarily change the `buttonFrame` reference
-    -- to the chatFrame itself.
-    chatFrame.buttonFrame = chatFrame;
-
-    hooks[_G].BNToastFrame_UpdateAnchor(forceAnchor);
-
-    chatFrame.buttonFrame = originalButtonFrame;
-end);
+_G.ChatAlertFrame:SetPoint("BOTTOMLEFT", DEFAULT_CHAT_FRAME, "TOPLEFT", 0, 27);
 
 ChatSuey.OnChatFrameReady(function (chatFrame)
     local frameName = chatFrame:GetName();

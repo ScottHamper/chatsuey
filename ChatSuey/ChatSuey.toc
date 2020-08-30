@@ -6,7 +6,7 @@
 ## OptionalDeps: Auctioneer
 ## SavedVariables: ChatSueyDB
 ## Notes: Utility library for ChatSuey addons. Useless by itself.
-## Notes-ruRU:Библиотека утилит для дополнений ChatSuey. Само по себе бесполезно.
+## Notes-ruRU: Библиотека утилит для дополнений ChatSuey. Само по себе бесполезно.
 
 Global.lua
 

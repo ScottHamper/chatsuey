@@ -1,9 +1,11 @@
 ## Interface: 11200
 ## Title: ChatSuey - Mouse Wheel
+## Title-ruRU: ChatSuey - Колесо мыши
 ## Author: Scott Hamper
-## X-Website: https://scott.software/chatsuey/
+## X-Website: https://www.scotthamper.com/chatsuey/
 ## Version: 1.1.0
 ## Dependencies: ChatSuey
 ## Notes: Enables the mouse wheel to scroll chat windows.
+## Notes-ruRU: Позволяет колесом мыши прокручивать окна чата.
 
 Main.lua

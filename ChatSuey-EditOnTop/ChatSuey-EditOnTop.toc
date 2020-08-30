@@ -1,9 +1,11 @@
 ## Interface: 11200
 ## Title: ChatSuey - Edit On Top
+## Title-ruRU: ChatSuey - Редактировать сверху
 ## Author: Scott Hamper
-## X-Website: https://scott.software/chatsuey/
+## X-Website: https://www.scotthamper.com/chatsuey/
 ## Version: 1.1.0
 ## DefaultState: disabled
 ## Notes: Moves the chat edit box above the chat window.
+## Notes-ruRU: Перемещает поле редактирования чата над окном чата.
 
 Main.lua

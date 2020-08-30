@@ -1,11 +1,12 @@
 ## Interface: 11200
 ## Title: ChatSuey
 ## Author: Scott Hamper
-## X-Website: https://scott.software/chatsuey/
+## X-Website: https://www.scotthamper.com/chatsuey/
 ## Version: 1.1.0
 ## OptionalDeps: Auctioneer
 ## SavedVariables: ChatSueyDB
 ## Notes: Utility library for ChatSuey addons. Useless by itself.
+## Notes-ruRU:Библиотека утилит для дополнений ChatSuey. Само по себе бесполезно.
 
 Global.lua
 
@@ -15,6 +16,7 @@ i18n\LocaleTable.lua
 i18n\enUS.lua
 i18n\frFR.lua
 i18n\zhCN.lua
+i18n\ruRU.lua
 
 HookTable.lua
 UIDropDownMenu.lua

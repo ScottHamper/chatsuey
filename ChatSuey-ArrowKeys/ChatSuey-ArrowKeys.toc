@@ -5,6 +5,6 @@
 ## X-Website: https://www.scotthamper.com/chatsuey/
 ## Version: 1.1.0
 ## Notes: Enables the left/right arrow keys to move the text cursor when writing a chat message.
-## Notes-ruRU:Позволяет клавишам со стрелками влево/вправо перемещать текстовый курсор при написании сообщения чата.
+## Notes-ruRU: Позволяет клавишам со стрелками влево/вправо перемещать текстовый курсор при написании сообщения чата.
 
 Main.lua

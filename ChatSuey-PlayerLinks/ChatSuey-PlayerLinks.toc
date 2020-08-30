@@ -1,9 +1,11 @@
 ## Interface: 11200
 ## Title: ChatSuey - Player Links
+## Title-ruRU: ChatSuey - Ссылки игроков
 ## Author: Scott Hamper
-## X-Website: https://scott.software/chatsuey/
+## X-Website: https://www.scotthamper.com/chatsuey/
 ## Version: 1.1.0
 ## Dependencies: ChatSuey
 ## Notes: Enhanced player hyperlinks in chat. Alt-Click to invite, Ctrl-Click to target. When writing a message, Shift-Click will insert a working hyperlink.
+## Notes-ruRU: Улучшеные гиперссылки на игрока в чате. Alt-Клик, чтобы пригласить, Ctrl-Клик, чтобы выбрать цель. При написании сообщения Shift-Клик вставит рабочую гиперссылку.
 
 Main.lua

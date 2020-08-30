@@ -1,14 +1,17 @@
 ## Interface: 11200
 ## Title: ChatSuey - Mini Channels
+## Title-ruRU: ChatSuey - Мини-каналы
 ## Author: Scott Hamper
-## X-Website: https://scott.software/chatsuey/
+## X-Website: https://www.scotthamper.com/chatsuey/
 ## Version: 1.1.0
 ## Dependencies: ChatSuey
 ## OptionalDeps: ChatSuey-Timestamps, ChatSuey-ChannelLinks
 ## Notes: Abbreviates channel headers. E.g., [Party] becomes [P] and [1. General] becomes [1].
+## Notes-ruRU: Сокращает заголовки каналов. Например, [Группа] становится [Г] и [1. Основной] становится [1].
 
 i18n\enUS.lua
 i18n\frFR.lua
 i18n\zhCN.lua
+i18n\ruRU.lua
 
 Main.lua

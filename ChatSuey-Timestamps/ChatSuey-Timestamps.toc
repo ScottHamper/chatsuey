@@ -1,14 +1,17 @@
 ## Interface: 11200
 ## Title: ChatSuey - Timestamps
+## Title-ruRU: ChatSuey - Отметки времени
 ## Author: Scott Hamper
-## X-Website: https://scott.software/chatsuey/
+## X-Website: https://www.scotthamper.com/chatsuey/
 ## Version: 1.1.0
 ## Dependences: ChatSuey
 ## Notes: Adds timestamps to chat messages. Right-click a chat tab to configure settings.
+## Notes-ruRU: Добавляет отметки времени в сообщения чата. Щелкните правой кнопкой мыши вкладку чата, чтобы настроить параметры.
 
 i18n\enUS.lua
 i18n\frFR.lua
 i18n\zhCN.lua
+i18n\ruRU.lua
 
 Config.lua
 ConfigUI.lua

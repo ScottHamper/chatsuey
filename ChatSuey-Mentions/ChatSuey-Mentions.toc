@@ -1,9 +1,11 @@
 ## Interface: 11200
 ## Title: ChatSuey - Mentions
+## Title-ruRU: ChatSuey - Упоминания
 ## Author: Scott Hamper
-## X-Website: https://scott.software/chatsuey/
+## X-Website: https://www.scotthamper.com/chatsuey/
 ## Version: 1.1.0
 ## Dependencies: ChatSuey
 ## Notes: Highlights mentions of your character's name in chat.
+## Notes-ruRU: Подчеркивает упоминания имени вашего персонажа в чате.
 
 Main.lua

@@ -1,9 +1,11 @@
 ## Interface: 11200
 ## Title: ChatSuey - Item Link Hover
+## Title-ruRU: ChatSuey - Ссылка на предмет наведения
 ## Author: Scott Hamper
-## X-Website: https://scott.software/chatsuey/
+## X-Website: https://www.scotthamper.com/chatsuey/
 ## Version: 1.1.0
 ## Dependencies: ChatSuey
 ## Notes: Hovering the mouse cursor over an item hyperlink will display the item's tooltip.
+## Notes-ruRU: При наведении курсора мыши на гиперссылку предмета отобразится всплывающая подсказка элемента.
 
 Main.lua

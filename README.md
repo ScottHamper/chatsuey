@@ -17,6 +17,7 @@ ChatSuey is currently localized for the following languages/game clients:
 - English (enUS)
 - French (frFR)
 - Simplified Chinese (zhCN)
+- Russian (ruRU)
 
 **HUGE THANK YOU** to:
 - [@eloib](https://github.com/eloib) for providing the French/Simplified Chinese translations!
@@ -30,4 +31,4 @@ If you're multi-lingual and would be willing to contribute another localization 
 - `ChatSuey-Timestamps`
 - `ChatSuey-WebLinks`
 
-Let me know you're interested by [opening an issue or pull request on GitHub](https://github.com/ScottHamper/ChatSuey), and take a look at each addon's `i18n\enUS.lua` file to get a sense of what translations are needed.
+Let me know you're interested by [opening an issue or pull request on GitHub](https://github.com/ScottHamper/ChatSuey), and take a look at each addon's `i18n\enUS.lua` file to get a sense of what translations are needed. Additionally, each addon's TOC file can have localized title/notes fields.

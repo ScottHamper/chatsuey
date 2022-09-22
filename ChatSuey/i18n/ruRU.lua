@@ -6,10 +6,6 @@ local LS = ruRU.Strings;
 ChatSuey.Locales = ChatSuey.Locales or ChatSuey.LocaleTable:new(ruRU);
 ChatSuey.Locales["ruRU"] = ruRU;
 
--- The following is unnecessary, but it serves as a good reference for
--- how to implement a locale, as well as being a list of all the
--- localized strings used.
-
 -- CSS2 Colors
 LS["BLACK"] = "BLACK";
 LS["GRAY"] = "GRAY";

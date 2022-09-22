@@ -1,13 +1,16 @@
 ## Interface: 11200
 ## Title: ChatSuey - Web Links
+## Title-ruRU: ChatSuey - Веб ссылки
 ## Author: Scott Hamper
-## X-Website: https://scott.software/chatsuey/
+## X-Website: https://www.scotthamper.com/chatsuey/
 ## Version: 1.1.0
 ## Dependencies: ChatSuey
 ## Notes: Automatically converts URLs with "://" into hyperlinks. Clicking them brings up a box to easily copy the URL into your clipboard. Enter/Escape keys can close the box.
+## Notes-ruRU: Автоматически преобразует URL-адреса с "://" в гиперссылки. При нажатии на них открывается окно, в котором URL-адрес можно легко скопировать в буфер обмена. Клавиши Enter/Escape могут закрыть окно.
 
 i18n\enUS.lua
 i18n\frFR.lua
 i18n\zhCN.lua
+i18n\ruRU.lua
 
 Main.lua

@@ -1,8 +1,10 @@
 ## Interface: 11200
 ## Title: ChatSuey - Sticky Chat
+## Title-ruRU: ChatSuey - Липкий чат
 ## Author: Scott Hamper
-## X-Website: https://scott.software/chatsuey/
+## X-Website: https://www.scotthamper.com/chatsuey/
 ## Version: 1.1.0
 ## Notes: Enables "sticky" chat for whispers, officer chat, and channel messages. The chat edit box will remain on a channel until changed (like it does with say/party/guild chat).
+## Notes-ruRU: Включает «липкий» чат для шепота, офицерского чата и сообщений канала. Поле редактирования чата останется на канале до тех пор, пока оно не будет изменено (как в случае с сказать/группа/гильд. чат).
 
 Main.lua

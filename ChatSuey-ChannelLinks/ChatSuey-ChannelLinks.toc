@@ -1,10 +1,12 @@
 ## Interface: 11200
 ## Title: ChatSuey - Channel Links
+## Title-ruRU: ChatSuey - Ссылки на каналы
 ## Author: Scott Hamper
-## X-Website: https://scott.software/chatsuey/
+## X-Website: https://www.scotthamper.com/chatsuey/
 ## Version: 1.1.0
 ## Dependencies: ChatSuey
 ## OptionalDeps: ChatSuey-Timestamps
 ## Notes: Turns channel headers into links. Click a header to open a chat box for that channel.
+## Notes-ruRU: Превращает заголовки каналов в ссылки. Щелкните заголовок, чтобы открыть окно чата для этого канала.
 
 Main.lua

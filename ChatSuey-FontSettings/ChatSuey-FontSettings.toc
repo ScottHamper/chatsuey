@@ -1,14 +1,17 @@
 ## Interface: 11200
 ## Title: ChatSuey - Font Settings
+## Title-ruRU: ChatSuey - Настройки шрифта
 ## Author: Scott Hamper
-## X-Website: https://scott.software/chatsuey/
+## X-Website: https://www.scotthamper.com/chatsuey/
 ## Version: 1.1.0
 ## Dependencies: ChatSuey
 ## Notes: Right-click a chat tab to adjust font settings, such as applying an outline.
+## Notes-ruRU: Щелкните правой кнопкой мыши вкладку чата, чтобы настроить параметры шрифта, например применить контур.
 
 i18n\enUS.lua
 i18n\frFR.lua
 i18n\zhCN.lua
+i18n\ruRU.lua
 
 Fonts.lua
 Config.lua

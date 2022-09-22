@@ -1,11 +1,13 @@
 ## Interface: 11200
 ## Title: ChatSuey - Remove Buttons
+## Title-ruRU: ChatSuey - Удалить кнопки
 ## Author: Scott Hamper
-## X-Website: https://scott.software/chatsuey/
+## X-Website: https://www.scotthamper.com/chatsuey/
 ## Version: 1.1.0
 ## Dependencies: ChatSuey
 ## DefaultState: disabled
 ## Notes: Removes the chat window buttons.
+## Notes-ruRU: Удаляет кнопки окна чата.
 
 BottomFlashTemplate.xml
 Main.lua

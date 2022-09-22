@@ -18,7 +18,9 @@ ChatSuey is currently localized for the following languages/game clients:
 - French (frFR)
 - Simplified Chinese (zhCN)
 
-**HUGE THANK YOU** to [@eloib](https://github.com/eloib) for providing the French/Simplified Chinese translations!
+**HUGE THANK YOU** to:
+- [@eloib](https://github.com/eloib) for providing the French/Simplified Chinese translations!
+- [@shikulja](https://github.com/shikulja) for providing the Russian translations!
 
 If you're multi-lingual and would be willing to contribute another localization for ChatSuey, I would greatly appreciate your help! The following addons have text that needs to be translated:
 

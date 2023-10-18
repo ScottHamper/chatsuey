@@ -25,7 +25,6 @@ local clickedUrl = "";
 
 local onHyperlinkClick = function (self, uri, ...)
     if not uri:find(URL_PATTERN) then
-        hooks[self].OnHyperlinkClick(self, uri, ...);
         return;
     end
 
@@ -38,7 +37,7 @@ end;
 
 ChatSuey.OnChatFrameReady(function (chatFrame)
     hooks:RegisterFunc(chatFrame, "AddMessage", addMessage);
-    hooks:RegisterScript(chatFrame, "OnHyperlinkClick", onHyperlinkClick);
+    chatFrame:HookScript("OnHyperlinkClick", onHyperlinkClick);
 end);
 
 _G.StaticPopupDialogs[DIALOG_NAME] = {

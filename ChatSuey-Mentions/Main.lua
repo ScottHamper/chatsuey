@@ -1,5 +1,4 @@
 local ChatSuey = _G.ChatSuey;
-local hooks = ChatSuey.HookTable:new();
 
 local MENTION_EVENTS = {
     CHAT_MSG_SAY = true,
@@ -15,12 +14,6 @@ local MENTION_EVENTS = {
     CHAT_MSG_BATTLEGROUND_LEADER = true,
     CHAT_MSG_GUILD = true,
     CHAT_MSG_OFFICER = true,
-    GUILD_MOTD = true,
-    CHAT_MSG_MONSTER_SAY = true,
-    CHAT_MSG_MONSTER_YELL = true,
-    CHAT_MSG_MONSTER_EMOTE = true,
-    CHAT_MSG_MONSTER_PARTY = true,
-    CHAT_MSG_RAID_BOSS_EMOTE = true,
     CHAT_MSG_CHANNEL = true,
 };
 
@@ -43,21 +36,20 @@ local highlight = function (text)
     return ("|c%s%s|r"):format(HIGHLIGHT_COLOR, text);
 end;
 
-local onEvent = function (self, event, message, sender, ...)
-    if not MENTION_EVENTS[event] or sender == PLAYER_NAME then
-        hooks[self].OnEvent(self, event, message, sender, ...);
-        return;
+local filter = function (self, event, message, sender, ...)
+    if sender == PLAYER_NAME then
+        return false, message, sender, ...;
     end
 
     local message, count = message:gsub(HIGHLIGHT_PATTERN, highlight);
 
     if count > 0 then
-        _G.PlaySound(SOUNDKIT.TELL_MESSAGE);
+        _G.PlaySound(_G.SOUNDKIT.TELL_MESSAGE);
     end
 
-    hooks[self].OnEvent(self, event, message, sender, ...);
+    return false, message, sender, ...;
 end;
 
-ChatSuey.OnChatFrameReady(function (chatFrame)
-    hooks:RegisterScript(chatFrame, "OnEvent", onEvent);
-end);
+for event, _ in pairs(MENTION_EVENTS) do
+    _G.ChatFrame_AddMessageEventFilter(event, filter);
+end

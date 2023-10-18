@@ -3,7 +3,7 @@ ChatSuey.DB.Config = ChatSuey.DB.Config or {};
 ChatSuey.DB.Config.Font = ChatSuey.DB.Config.Font or {};
 
 local defaults = {
-    outline = nil,
+    outline = "",
     path = ChatSuey.Fonts.ARIAL_NARROW.path,
 };
 

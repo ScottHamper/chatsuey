@@ -1,7 +1,7 @@
 ## Interface: 100000
 ## Title: ChatSuey - Mouse Wheel
 ## Author: Scott Hamper
-## X-Website: https://scott.software/chatsuey/
+## X-Website: https://www.scotthamper.com/chatsuey/
 ## Version: 1.1.0
 ## Dependencies: ChatSuey
 ## Notes: Hold shift while scrolling to move 5 lines at a time. Hold control to go to the very top/bottom.

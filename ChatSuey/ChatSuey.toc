@@ -1,7 +1,7 @@
 ## Interface: 100000
 ## Title: ChatSuey
 ## Author: Scott Hamper
-## X-Website: https://scott.software/chatsuey/
+## X-Website: https://www.scotthamper.com/chatsuey/
 ## Version: 1.1.0
 ## SavedVariables: ChatSueyDB
 ## Notes: Utility library for ChatSuey addons. Useless by itself.

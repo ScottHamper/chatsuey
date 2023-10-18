@@ -1,5 +1,4 @@
 local ChatSuey = _G.ChatSuey;
-local hooks = ChatSuey.HookTable:new();
 local schemes = ChatSuey.UriSchemes;
 
 local TOOLTIP_SCHEMES = {
@@ -13,8 +12,6 @@ local TOOLTIP_SCHEMES = {
 };
 
 local onHyperlinkEnter = function (self, uri, link)
-    hooks[self].OnHyperlinkEnter(self, uri, link);
-
     local scheme = ChatSuey.UriComponents(uri);
 
     if not TOOLTIP_SCHEMES[scheme] then
@@ -27,12 +24,10 @@ local onHyperlinkEnter = function (self, uri, link)
 end;
 
 local onHyperlinkLeave = function (self)
-    hooks[self].OnHyperlinkLeave(self);
-
     _G.GameTooltip:Hide();
 end;
 
 ChatSuey.OnChatFrameReady(function (chatFrame)
-    hooks:RegisterScript(chatFrame, "OnHyperlinkEnter", onHyperlinkEnter);
-    hooks:RegisterScript(chatFrame, "OnHyperlinkLeave", onHyperlinkLeave);
+    chatFrame:HookScript("OnHyperlinkEnter", onHyperlinkEnter);
+    chatFrame:HookScript("OnHyperlinkLeave", onHyperlinkLeave);
 end);

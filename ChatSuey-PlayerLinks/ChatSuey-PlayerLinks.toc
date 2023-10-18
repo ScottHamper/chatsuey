@@ -1,4 +1,4 @@
-## Interface: 80000
+## Interface: 100000
 ## Title: ChatSuey - Player Links
 ## Author: Scott Hamper
 ## X-Website: https://scott.software/chatsuey/

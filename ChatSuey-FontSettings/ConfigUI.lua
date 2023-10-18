@@ -85,7 +85,7 @@ local initialize = function (frame, level)
         _G.UIDropDownMenu_AddButton(SPACER, 2);
 
         addHeader(LS["Outline"], 2);
-        _G.UIDropDownMenu_AddButton(outlineOption(chatFrame, LS["None"], nil), 2);
+        _G.UIDropDownMenu_AddButton(outlineOption(chatFrame, LS["None"], ""), 2);
         _G.UIDropDownMenu_AddButton(outlineOption(chatFrame, LS["Thin"], "OUTLINE"), 2);
         _G.UIDropDownMenu_AddButton(outlineOption(chatFrame, LS["Thick"], "THICKOUTLINE"), 2);
         _G.UIDropDownMenu_AddButton(SPACER, 2);
